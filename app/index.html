@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Selection Helper</title>
+<link rel="stylesheet" href="css/styles.css?v=20260830-planning-1">
+</head>
+<body>
+
+<header id="masthead"></header>
+
+<main class="container page-content">
+
+  <span class="eyebrow">Term Planning · Fall 2026</span>
+  <h1>Let's plan your next term.</h1>
+  <p class="lede">Identify yourself as a returning student to pick up your profile, or start fresh with a few quick details. Everything here — courses, sections, and recommendations — is sample data for this demo.</p>
+
+  <div class="card mt-24" style="max-width: 640px;">
+    <div class="tabs">
+      <button class="tab tab--active" data-tab="id" type="button">By Student ID</button>
+      <button class="tab" data-tab="manual" type="button">Manual Selection</button>
+    </div>
+
+    <!-- Option A: Student ID -->
+    <div class="tab-panel tab-panel--active" data-panel="id">
+      <div id="id-error" class="error-banner hidden" role="alert"></div>
+      <div class="field">
+        <label for="student-id-input">Student ID</label>
+        <input type="text" id="student-id-input" placeholder="e.g. S1001" autocomplete="off">
+        <p class="field-hint">Try <strong>S1001</strong>–<strong>S1004</strong>, or use the sample-student picker below.</p>
+      </div>
+      <button class="btn btn--primary btn--full" id="load-profile-btn" type="button">Load Student Profile</button>
+    </div>
+
+    <!-- Option B: Manual Selection -->
+    <div class="tab-panel" data-panel="manual">
+      <div class="form-grid">
+        <div class="field">
+          <label for="manual-campus">Campus</label>
+          <select id="manual-campus"></select>
+        </div>
+        <div class="field">
+          <label for="manual-term">Academic Term</label>
+          <select id="manual-term"></select>
+        </div>
+        <div class="field">
+          <label for="manual-program">Major / Program</label>
+          <select id="manual-program"></select>
+        </div>
+        <div class="field">
+          <label for="manual-year">Year of Study</label>
+          <select id="manual-year">
+            <option>Freshman</option>
+            <option>Sophomore</option>
+            <option>Junior</option>
+            <option>Senior</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn--gold btn--full" id="start-planning-btn" type="button">Start Course Planning</button>
+      <p class="field-hint mt-8">Manual selection builds a fresh profile with no completed courses — useful for demonstrating the "just getting started" path.</p>
+    </div>
+  </div>
+
+  <!-- Sample student picker -->
+  <div class="card mt-16" style="max-width: 640px;">
+    <div class="section-heading">
+      <h3 style="margin:0;">Try a demo student</h3>
+      <span class="text-faint">For presenters</span>
+    </div>
+    <p class="text-faint mt-8" style="margin-bottom:14px;">Each profile is tuned to show off a different part of the recommendation logic.</p>
+    <div id="demo-student-list"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Course Selection Helper — demo data only. No real students, courses, or registrations.</footer>
+
+<script src="js/data.js?v=20260830-planning-1"></script>
+<script src="js/app.js?v=20260830-planning-1"></script>
+<script>
+  renderMasthead(1);
+
+  /* ---------- Tabs ---------- */
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".tab").forEach(t => t.classList.remove("tab--active"));
+      document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("tab-panel--active"));
+      tab.classList.add("tab--active");
+      document.querySelector(`.tab-panel[data-panel="${tab.dataset.tab}"]`).classList.add("tab-panel--active");
+    });
+  });
+
+  /* ---------- Option A: Student ID ---------- */
+  const idInput = document.getElementById("student-id-input");
+  const idError = document.getElementById("id-error");
+
+  function goToStudent(id) {
+    const student = findStudentById(id);
+    if (!student) {
+      idError.textContent = `We couldn't find a student with ID "${id.trim()}". Double-check the ID, or try one of the demo students below.`;
+      idError.classList.remove("hidden");
+      return;
+    }
+    idError.classList.add("hidden");
+    setState({
+      studentId: student.id,
+      selectedTerm: "F26",
+      selectedCampus: student.campus,
+      manualProfile: null,
+      preferences: null,
+      plan: []
+    });
+    window.location.href = "profile.html";
+  }
+
+  document.getElementById("load-profile-btn").addEventListener("click", () => {
+    if (!idInput.value.trim()) {
+      idError.textContent = "Enter a student ID to continue.";
+      idError.classList.remove("hidden");
+      return;
+    }
+    goToStudent(idInput.value);
+  });
+  idInput.addEventListener("keydown", e => { if (e.key === "Enter") goToStudent(idInput.value); });
+
+  /* ---------- Option B: Manual selection ---------- */
+  const campusSelect = document.getElementById("manual-campus");
+  const termSelect = document.getElementById("manual-term");
+  const programSelect = document.getElementById("manual-program");
+
+  campuses.forEach(c => campusSelect.appendChild(el("option", { value: c.id }, c.name)));
+  terms.forEach(t => termSelect.appendChild(el("option", { value: t.id }, t.name)));
+  programs.forEach(p => programSelect.appendChild(el("option", { value: p.id }, `${p.name} (${p.degree})`)));
+
+  document.getElementById("start-planning-btn").addEventListener("click", () => {
+    const manualId = "GUEST";
+    setState({
+      studentId: null,
+      manualProfile: {
+        id: "GUEST",
+        name: "New Student",
+        programId: programSelect.value,
+        year: document.getElementById("manual-year").value,
+        campus: campusSelect.value,
+        completedCourses: []
+      },
+      selectedTerm: termSelect.value,
+      selectedCampus: campusSelect.value,
+      preferences: null,
+      plan: []
+    });
+    window.location.href = "profile.html";
+  });
+
+  /* ---------- Demo student list ---------- */
+  const demoDescriptions = {
+    S1001: "On track — a clean set of straightforward recommendations.",
+    S1002: "Missing a couple of prerequisites for higher-level courses.",
+    S1003: "Interested in courses that overlap — good schedule-conflict demo.",
+    S1004: "Senior, close to graduation, needs specific required courses."
+  };
+
+  const list = document.getElementById("demo-student-list");
+  students.forEach(s => {
+    const program = getProgram(s.programId);
+    const row = el("div", { class: "plan-item" }, [
+      el("div", { class: "plan-item__info" }, [
+        el("div", { class: "plan-item__title" }, `${s.name} — ${s.id}`),
+        el("div", { class: "plan-item__meta" }, `${program.name} · ${s.year} · ${demoDescriptions[s.id]}`)
+      ]),
+      el("button", { class: "btn btn--outline btn--sm", onclick: () => goToStudent(s.id) }, "Load")
+    ]);
+    list.appendChild(row);
+  });
+</script>
+</body>
+</html>

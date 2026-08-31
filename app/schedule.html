@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build My Schedule — Course Selection Helper</title>
+<link rel="stylesheet" href="css/styles.css?v=20260830-planning-1">
+</head>
+<body>
+
+<header id="masthead"></header>
+
+<main class="container page-content">
+  <span class="eyebrow">Step 4 of 4</span>
+  <h1>Build your schedule</h1>
+  <p class="lede">Add or remove courses, check for conflicts, and review your plan before finalizing.</p>
+
+  <section class="card" aria-labelledby="schedule-assistant-title">
+    <h2 id="schedule-assistant-title" style="margin-top:0;">Plan with an assistant</h2>
+    <p id="webmcp-status" class="text-faint" role="status">Checking WebMCP support…</p>
+    <p>Try: “I work Tuesdays after noon,” “Compare schedules with fewer gaps,” “Explain this section,” “Swap this elective,” or “Undo my last plan change.” Your default load is 12 credits unless you set another preference.</p>
+    <p class="text-faint">Drafts use your saved preferences and demo course data. Previewing does not change your plan; using a draft replaces it. Nothing here registers you for courses.</p>
+    <button id="suggest-schedule-btn" type="button" class="btn btn--outline">Preview suggested schedules</button>
+    <p id="schedule-assistant-feedback" class="text-faint mt-16" role="status"></p>
+    <div id="schedule-drafts" class="schedule-drafts"></div>
+    <div id="schedule-comparison" class="mt-16"></div>
+    <div id="section-actions" class="mt-16" tabindex="-1"></div>
+  </section>
+
+  <details class="card" id="availability">
+    <summary><strong>Unavailable times</strong> — work, commuting, and other commitments</summary>
+    <p class="text-faint">These are hard constraints, unlike preferred days. Existing courses stay in your plan but conflicts are flagged. Times repeat weekly in local campus time; use 24:00 for midnight and split overnight commitments.</p>
+    <form id="unavailable-form" class="availability-form">
+      <div class="field"><label for="unavailable-day">Day</label><select id="unavailable-day"><option>Mon</option><option>Tue</option><option>Wed</option><option>Thu</option><option>Fri</option></select></div>
+      <div class="field"><label for="unavailable-start">From</label><input id="unavailable-start" type="time" value="12:00" required></div>
+      <div class="field"><label for="unavailable-end">Until (HH:MM)</label><input id="unavailable-end" type="text" value="17:00" pattern="([01][0-9]|2[0-3]):[0-5][0-9]|24:00" maxlength="5" required></div>
+      <div class="field"><label for="unavailable-label">Label (optional)</label><input id="unavailable-label" type="text" maxlength="80" placeholder="Busy"></div>
+      <button type="submit" class="btn btn--outline">Add unavailable time</button>
+    </form>
+    <p id="availability-feedback" role="status" class="text-faint"></p>
+    <div id="unavailable-list"></div>
+  </details>
+
+  <div id="conflict-banner" class="hidden"></div>
+
+  <div class="two-col mt-24">
+    <div>
+      <div class="card">
+        <div class="section-heading">
+          <h2 style="margin:0;">Weekly view</h2>
+        </div>
+        <div id="calendar-mount"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-heading">
+          <h2 style="margin:0;">Compare added courses</h2>
+        </div>
+        <div id="compare-mount"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="section-heading">
+          <h3 style="margin:0;">Your plan</h3>
+        </div>
+        <div class="credit-total">
+          <span class="credit-total__num" id="credit-total-num">0</span>
+          <span class="credit-total__label">credits · <span id="course-count-label">0 courses</span></span>
+        </div>
+        <p id="schedule-metrics" class="text-faint"></p>
+        <button id="undo-schedule-btn" type="button" class="btn btn--outline btn--sm" disabled>Undo last plan change</button>
+        <p id="undo-feedback" role="status" class="text-faint"></p>
+        <div id="plan-list" class="mt-16"></div>
+        <div id="plan-empty" class="state-block hidden mt-16">
+          <h3>No courses added yet</h3>
+          <p>Go back to recommendations and add a few, or add one directly below.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0;">Add a course</h3>
+        <div class="field">
+          <label for="add-course-select">Available sections this term</label>
+          <select id="add-course-select"></select>
+        </div>
+        <button class="btn btn--outline btn--full" id="add-course-btn" type="button">Add to plan</button>
+      </div>
+
+      <div class="card" id="finalize-card">
+        <h3 style="margin-top:0;">Finalize plan</h3>
+        <p class="text-faint">This locks in your plan for review with an advisor. It does not register you for these courses.</p>
+        <button class="btn btn--primary btn--full" id="finalize-btn" type="button">Finalize Plan</button>
+        <div id="finalize-confirmation" class="hidden mt-16"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-between mt-24">
+    <a href="recommendations.html" class="btn btn--ghost">← Back to recommendations</a>
+  </div>
+</main>
+
+<footer class="site-footer">Course Selection Helper — demo data only. No real students, courses, or registrations.</footer>
+
+<script src="js/data.js?v=20260830-planning-1"></script>
+<script src="js/app.js?v=20260830-planning-1"></script>
+<script src="js/schedule-tools.js?v=20260830-planning-1"></script>
+<script src="js/schedule.js?v=20260830-planning-1"></script>
+<script src="js/webmcp.js?v=20260830-planning-1"></script>
+<script src="js/schedule-assistant.js?v=20260830-planning-1"></script>
+</body>
+</html>

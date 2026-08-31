@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recommendations — Course Selection Helper</title>
+<link rel="stylesheet" href="css/styles.css?v=20260830-planning-1">
+</head>
+<body>
+
+<header id="masthead"></header>
+
+<main class="container page-content">
+  <span class="eyebrow">Step 3 of 4</span>
+  <div class="flex-between">
+    <div>
+      <h1>Your recommendations</h1>
+      <p class="lede">Ranked using your degree requirements, prerequisites, and preferences — with the reasoning shown for every course.</p>
+    </div>
+    <button class="btn btn--outline" id="edit-prefs-btn" type="button">Edit preferences</button>
+  </div>
+
+  <div id="loading-state" class="state-block">
+    <div class="spinner"></div>
+    <h3>Building your recommendations…</h3>
+    <p>Checking prerequisites, requirements, and section availability.</p>
+  </div>
+
+  <div id="summary-bar" class="card mt-24 hidden"></div>
+  <div id="conflict-banner" class="hidden"></div>
+
+  <div id="rec-list" class="mt-16"></div>
+
+  <div id="empty-state" class="state-block hidden">
+    <h3>No matching courses found</h3>
+    <p>Try widening your preferences — for example, allow more preferred days, or switch format to "No preference".</p>
+  </div>
+
+  <div class="flex-between mt-24">
+    <a href="profile.html" class="btn btn--ghost">← Back to profile</a>
+    <a href="schedule.html" class="btn btn--primary">Review my schedule →</a>
+  </div>
+</main>
+
+<footer class="site-footer">Course Selection Helper — demo data only. No real students, courses, or registrations.</footer>
+
+<script src="js/data.js?v=20260830-planning-1"></script>
+<script src="js/app.js?v=20260830-planning-1"></script>
+<script src="js/recommendations.js?v=20260830-planning-1"></script>
+</body>
+</html>
