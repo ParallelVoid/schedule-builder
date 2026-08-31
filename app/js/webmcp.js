@@ -1,6 +1,7 @@
 /* Experimental browser integration. No polyfill, backend, or API key needed. */
 (() => {
   const status = document.getElementById("webmcp-status");
+  const setStatus = message => { if (status) status.textContent = message; };
   let controller;
   let registered = [];
   let activeContext;
@@ -22,23 +23,22 @@
     const currentGeneration = generation;
     activeContext = typeof document.modelContext?.registerTool === "function" ? document.modelContext : navigator.modelContext;
     if (typeof activeContext?.registerTool !== "function") {
-      status.textContent = "WebMCP is not available in this browser. You can still preview drafts below or build your plan manually.";
+      setStatus("WebMCP is not available in this browser. Manual planning still works on the Schedule page.");
       return;
     }
-    if (!getActiveStudent()) return;
     controller = new AbortController();
-    status.textContent = "Connecting scheduling tools…";
+    setStatus("Connecting scheduling tools…");
     try {
       for (const tool of ScheduleTools.tools) {
         await activeContext.registerTool(tool, { signal: controller.signal });
         if (generation !== currentGeneration) return;
         registered.push(tool.name);
       }
-      status.textContent = `${registered.length} WebMCP tools ready for a compatible browser assistant. Changes appear in your plan immediately.`;
+      setStatus(`${registered.length} WebMCP tools ready for a compatible browser assistant. ${getActiveStudent() ? "Available throughout Termwise; review your plan on the Schedule page." : "Choose a student on the Identify page before planning."}`);
     } catch (error) {
       if (generation !== currentGeneration) return;
       cleanup();
-      status.textContent = "WebMCP tools could not be registered. Manual planning and draft previews still work.";
+      setStatus("WebMCP tools could not be registered. Manual planning and draft previews still work.");
       console.warn("Schedule WebMCP registration failed:", error);
     }
   }

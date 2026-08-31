@@ -1,4 +1,10 @@
-# Course Selection Helper — Demo
+# Termwise — Demo
+
+**Your next term, sorted.** The light interface uses the original academic navy,
+gold, forest and brick palette. The masthead theme selector offers system, light and
+dark modes and saves the choice locally. Theme and calendar colours live in the
+`:root` variables in `css/styles.css`; `js/theme.js` applies the saved mode before
+the page renders.
 
 A static, front-end-only demo of an academic advising assistant. Pure HTML/CSS/vanilla JS —
 no build step, no backend, no database, no external API calls. All data lives in
@@ -62,6 +68,7 @@ schedule.html          Weekly calendar, plan builder, compare, finalize
 css/styles.css         Shared styles
 js/data.js             All embedded demo data
 js/app.js              Shared helpers (state, lookups, requirement/prereq/schedule math)
+js/theme.js            Persistent system/light/dark theme selection
 js/profile.js           profile.html logic
 js/recommendations.js   Recommendation scoring engine + rendering
 js/schedule.js          Schedule builder logic
@@ -104,7 +111,12 @@ status means tools registered, not that an assistant is connected.
 There is no polyfill, external AI request, API key, MCP server process, or embedded
 chatbot. An assistant needs browser-side WebMCP support to discover and invoke
 these tools; a conventional backend MCP client cannot connect directly to them.
-Tools are registered only on `schedule.html`, after a student has been selected.
+All five tools are registered on Identify, Profile, Recommendations and Schedule,
+so navigating between pages does not leave the assistant without tools. Each page
+shows a connection status. Before a student is selected, tools remain discoverable
+but return an instruction to choose a student; no planning data is read or changed.
+Tool handles belong to the current page: browser assistants must rediscover tools
+after navigation or reload. Review saved changes on the Schedule page.
 
 ### Tools
 

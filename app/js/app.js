@@ -259,17 +259,33 @@ function renderMasthead(activeStep) {
   mount.innerHTML = `
     <div class="masthead__top">
       <a href="index.html" class="wordmark">
-        <span class="wordmark__mark">CH</span>
-        <span class="wordmark__text">Course Selection Helper<br><small>Academic Advising Demo</small></span>
+        <span class="wordmark__mark" aria-hidden="true">TW</span>
+        <span class="wordmark__text">Termwise<br><small>Your next term, sorted</small></span>
       </a>
-      ${student ? `
-        <div class="masthead__student">
-          <span class="masthead__student-name">${escapeHtml(student.name)}</span>
-          <span class="masthead__student-meta">${escapeHtml(student.id)} · ${escapeHtml(getProgram(student.programId).name)}</span>
-        </div>` : ""}
+      <div class="masthead__actions">
+        ${student ? `
+          <div class="masthead__student">
+            <span class="masthead__student-name">${escapeHtml(student.name)}</span>
+            <span class="masthead__student-meta">${escapeHtml(student.id)} · ${escapeHtml(getProgram(student.programId).name)}</span>
+          </div>` : ""}
+        <label class="theme-picker">
+          <span class="theme-picker__label">Theme</span>
+          <select id="theme-select" aria-label="Colour theme">
+            <option value="system">System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
+      </div>
     </div>
     <nav class="stepper" aria-label="Planning steps">${stepsHtml}</nav>
   `;
+
+  const themeSelect = document.getElementById("theme-select");
+  if (themeSelect && window.TermwiseTheme) {
+    themeSelect.value = TermwiseTheme.getPreference();
+    themeSelect.addEventListener("change", () => TermwiseTheme.setPreference(themeSelect.value));
+  }
 }
 
 /* Returns the active student record, whether they were loaded by

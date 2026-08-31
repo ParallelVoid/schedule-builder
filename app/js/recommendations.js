@@ -192,7 +192,7 @@
         ])
       ]),
       el("div", { class: "tag-row" }, [
-        item.satisfyCategory ? el("span", { class: "tag tag--gold" }, "Fills requirement") : null,
+        item.satisfyCategory ? el("span", { class: "tag tag--accent" }, "Fills requirement") : null,
         item.prereqsOk ? el("span", { class: "tag tag--good" }, "Prereqs met") : el("span", { class: "tag tag--warn" }, "Prereqs missing"),
         section.seatsAvailable === 0 ? el("span", { class: "tag tag--warn" }, "Full") : el("span", { class: "tag tag--neutral" }, `${section.seatsAvailable} seats open`)
       ])
@@ -231,7 +231,7 @@
     const footer = el("div", { class: "rec-card__footer" }, [
       el("span", { class: "text-faint" }, `${course.department}`),
       el("button", {
-        class: "btn " + (inPlan ? "btn--outline" : "btn--gold") + " btn--sm",
+        class: "btn " + (inPlan ? "btn--outline" : "btn--accent") + " btn--sm",
         onclick: (e) => addToPlan(section.id, e.target)
       }, inPlan ? "Added to schedule ✓" : "Add to schedule")
     ]);
@@ -250,7 +250,7 @@
     if (current.includes(sectionId)) return;
     setState({ plan: [...current, sectionId] });
     button.textContent = "Added to schedule ✓";
-    button.classList.remove("btn--gold");
+    button.classList.remove("btn--accent");
     button.classList.add("btn--outline");
   }
 })();

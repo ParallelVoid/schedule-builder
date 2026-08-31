@@ -159,8 +159,8 @@ test('cancellation and localStorage failure do not report successful mutations',
   assert.equal(app.events.length, 0);
 });
 
-async function browserFixture(mode, failAt = -1) {
-  const app = fixture();
+async function browserFixture(mode, failAt = -1, state, hasStatus = true) {
+  const app = fixture(state);
   const nodes = new Map();
   const handlers = {};
   const registered = new Map();
@@ -176,6 +176,7 @@ async function browserFixture(mode, failAt = -1) {
   app.context.document = {
     ...(mode === 'native' ? { modelContext } : {}),
     getElementById: id => {
+      if (!hasStatus) return null;
       if (!nodes.has(id)) nodes.set(id, { textContent: '', addEventListener() {} });
       return nodes.get(id);
     }
@@ -206,6 +207,46 @@ test('unsupported browsers degrade gracefully and registration failure removes p
   const failed = await browserFixture('native', 2);
   assert.equal(failed.registered.size, 0);
   assert.match(failed.nodes.get('webmcp-status').textContent, /could not be registered/);
+});
+
+test('every app page loads the shared tools and registration once in dependency order', () => {
+  for (const page of ['index.html', 'profile.html', 'recommendations.html', 'schedule.html']) {
+    const html = fs.readFileSync(path.join(__dirname, '..', page), 'utf8');
+    const scripts = [...html.matchAll(/<script src="([^"?]+)(?:\?[^" ]*)?"/g)].map(match => match[1]);
+    const dependencies = ['js/data.js', 'js/app.js', 'js/schedule-tools.js', 'js/webmcp.js'];
+    for (const script of dependencies) {
+      assert.equal(scripts.filter(src => src === script).length, 1, `${page}: ${script}`);
+      assert.ok(fs.existsSync(path.join(__dirname, '..', script)));
+    }
+    const order = dependencies.map(script => scripts.indexOf(script));
+    assert.deepEqual(order, [...order].sort((a, b) => a - b), page);
+    assert.equal([...html.matchAll(/id="webmcp-status"/g)].length, 1, page);
+  }
+});
+
+test('tools stay discoverable before identification and use the student selected afterwards', async () => {
+  for (const mode of ['native', 'legacy']) {
+    const app = await browserFixture(mode, -1, {});
+    assert.equal(app.registered.size, 5);
+    assert.match(app.nodes.get('webmcp-status').textContent, /Choose a student/);
+    assert.match((await app.registered.get('get_schedule_context').execute({})).error, /Identify/);
+    assert.equal((await app.registered.get('apply_schedule').execute({ sectionIds: [], expectedPlan: [] })).ok, false);
+    assert.deepEqual(app.state(), {});
+    vm.runInContext("setState({ studentId: 'S1004', plan: [] })", app.context);
+    assert.equal((await app.registered.get('get_schedule_context').execute({})).program.id, 'psy');
+    app.handlers.pagehide();
+    app.handlers.pageshow({ persisted: true });
+    await new Promise(resolve => setImmediate(resolve));
+    assert.equal(app.registered.size, 5);
+    assert.match(app.nodes.get('webmcp-status').textContent, /Available throughout Termwise/);
+  }
+});
+
+test('a missing status element cannot prevent registration or break unsupported browsers', async () => {
+  for (const mode of ['native', 'legacy', 'unsupported']) {
+    const app = await browserFixture(mode, -1, undefined, false);
+    assert.equal(app.registered.size, mode === 'unsupported' ? 0 : 5);
+  }
 });
 
 test('unavailable times exclude matching meetings everywhere without removing existing courses', async () => {

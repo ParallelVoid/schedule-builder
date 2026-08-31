@@ -1,5 +1,5 @@
 /* ============================================================
-   data.js — All demo data for the Course Selection Helper.
+   data.js — All demo data for Termwise.
    This is the single source of truth for the demo. Add students,
    courses, sections, or requirements here without touching any
    other file.

@@ -16,7 +16,7 @@
   const term = getTerm(termId);
   const completedCodes = getCompletedCodes(student);
 
-  const EVENT_COLORS = ["#1C2541", "#B8860F", "#2F6E52", "#7A4FA0", "#A6432E", "#2F6E52", "#4B5570"];
+  const EVENT_COLORS = Array.from({ length: 6 }, (_, index) => `var(--course-${index + 1})`);
 
   function getPlanSections() {
     const planIds = getState().plan || [];
