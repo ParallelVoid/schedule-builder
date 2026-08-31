@@ -288,15 +288,15 @@ const sections = [
 
 /* ----------------------------------------------------------
    Students — four scenarios:
-   S1001 Alex Chen    — on track, straightforward recommendations
-   S1002 Priya Patel   — will hit missing-prerequisite warnings
-   S1003 Jordan Lee    — will hit schedule-conflict warnings
-   S1004 Morgan Diaz   — behind on specific required courses
+   S1001 Peter Parker	— on track, straightforward recommendations
+   S1002 Nathan Drake	— will hit missing-prerequisite warnings
+   S1003 Philip Fry		— will hit schedule-conflict warnings
+   S1004 Han Solo   	— behind on specific required courses
    ---------------------------------------------------------- */
 const students = [
   {
     id: "S1001",
-    name: "Alex Chen",
+    name: "Peter Parker",
     programId: "cs",
     year: "Junior",
     campus: "main",
@@ -311,7 +311,7 @@ const students = [
   },
   {
     id: "S1002",
-    name: "Priya Patel",
+    name: "Nathan Drake",
     programId: "cs",
     year: "Sophomore",
     campus: "main",
@@ -323,7 +323,7 @@ const students = [
   },
   {
     id: "S1003",
-    name: "Jordan Lee",
+    name: "Philip Fry",
     programId: "bus",
     year: "Sophomore",
     campus: "main",
@@ -335,7 +335,7 @@ const students = [
   },
   {
     id: "S1004",
-    name: "Morgan Diaz",
+    name: "Han Solo",
     programId: "psy",
     year: "Senior",
     campus: "north",
