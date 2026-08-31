@@ -29,15 +29,15 @@
   }
 
   async function showExplanation(sectionId, sectionIds) {
-    const result = await ScheduleTools.execute("explain_schedule_section", { sectionId, ...(sectionIds ? { sectionIds } : {}) });
+    const result = await ScheduleTools.execute("preview_schedule", { explainSectionId: sectionId, ...(sectionIds ? { sectionIds } : {}) });
     actionMount.replaceChildren(el("h3", {}, "Why this section?"));
-    actionMount.appendChild(result.error ? el("p", {}, result.error) : explanationContent(result));
+    actionMount.appendChild(result.error ? el("p", {}, result.error) : explanationContent(result.explanation));
     actionMount.focus({ preventScroll: true });
     actionMount.scrollIntoView({ block: "nearest" });
   }
 
   async function showSwaps(sectionId, sameTimeOnly = false) {
-    const result = await ScheduleTools.execute("find_schedule_swaps", { sectionId, sameTimeOnly });
+    const result = await ScheduleTools.execute("suggest_schedules", { replaceSectionId: sectionId, sameTimeOnly });
     actionMount.replaceChildren(el("h3", {}, "Swap one course"));
     if (result.error) { actionMount.appendChild(el("p", {}, result.error)); return; }
     const toggle = el("input", { type: "checkbox", onchange: event => showSwaps(sectionId, event.target.checked) });
@@ -49,8 +49,8 @@
       const replacement = option.sections.find(section => section.id === option.replacementSectionId);
       const apply = el("button", { type: "button", class: "btn btn--outline btn--sm" }, `Use ${replacement.courseCode} (${replacement.id})`);
       apply.addEventListener("click", async () => {
-        const saved = await ScheduleTools.execute("swap_schedule_section", {
-          sectionId, replacementSectionId: option.replacementSectionId, expectedPlan: result.expectedPlan
+        const saved = await ScheduleTools.execute("apply_schedule", {
+          swap: { sectionId, replacementSectionId: option.replacementSectionId }, expectedPlan: result.expectedPlan
         });
         feedback.textContent = message(saved);
       });
@@ -68,7 +68,7 @@
   async function renderComparison(rankBy = "gapMinutes") {
     comparisonMount.replaceChildren();
     if (comparisonOptions.length < 2) return;
-    const result = await ScheduleTools.execute("compare_schedules", { schedules: comparisonOptions, rankBy });
+    const result = await ScheduleTools.execute("preview_schedule", { schedules: comparisonOptions, rankBy });
     if (result.error) { comparisonMount.appendChild(el("p", {}, result.error)); return; }
     const select = el("select", { id: "compare-priority", onchange: event => renderComparison(event.target.value) }, [
       ["gapMinutes", "Less time between classes"], ["campusDays", "Fewer campus days"], ["daysWithClasses", "Fewer class days"],
@@ -126,12 +126,12 @@
     const previous = getState().unavailableTimes || [];
     const block = { day: document.getElementById("unavailable-day").value, startTime: document.getElementById("unavailable-start").value,
       endTime: document.getElementById("unavailable-end").value, label: document.getElementById("unavailable-label").value.trim() };
-    const result = await ScheduleTools.execute("set_unavailable_times", { unavailableTimes: [...previous, block], expectedUnavailableTimes: previous });
+    const result = await ScheduleTools.execute("apply_schedule", { unavailableTimes: [...previous, block], expectedUnavailableTimes: previous });
     availabilityFeedback.textContent = message(result);
   });
 
   undoButton.addEventListener("click", async () => {
-    const result = await ScheduleTools.execute("undo_schedule_change", { expectedPlan: getState().plan || [] });
+    const result = await ScheduleTools.execute("apply_schedule", { undo: true, expectedPlan: getState().plan || [] });
     undoFeedback.textContent = message(result);
     feedback.textContent = message(result);
   });
@@ -147,7 +147,7 @@
     blocks.forEach((block, index) => {
       const remove = el("button", { type: "button", class: "btn btn--ghost btn--sm", "aria-label": `Remove unavailable time ${index + 1}` }, "Remove");
       remove.addEventListener("click", async () => {
-        const result = await ScheduleTools.execute("set_unavailable_times", { unavailableTimes: blocks.filter((_, i) => i !== index), expectedUnavailableTimes: blocks });
+        const result = await ScheduleTools.execute("apply_schedule", { unavailableTimes: blocks.filter((_, i) => i !== index), expectedUnavailableTimes: blocks });
         availabilityFeedback.textContent = message(result);
       });
       mount.appendChild(el("div", { class: "availability-item" }, [el("span", {}, `${block.day} ${block.startTime}–${block.endTime} · ${block.label || "Busy"}`), remove]));

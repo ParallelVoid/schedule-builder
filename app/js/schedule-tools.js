@@ -13,7 +13,11 @@ const ScheduleTools = (() => {
     label: { type: "string", maxLength: 80 }
   }, ["day", "startTime", "endTime"]) };
   const expectedPlanSchema = { ...ids, maxItems: 100, uniqueItems: false };
+  const availabilityOption = { ...blocksSchema,
+    description: "Optional replacement for saved unavailable times for this request only; [] ignores saved blocks. Omit to use saved blocks. Local campus time; split overnight blocks. Does not save." };
+  const rankBySchema = { type: "string", enum: ["gapMinutes", "campusDays", "daysWithClasses", "earlyMeetings", "eveningMeetings"] };
   const filters = {
+    unavailableTimes: availabilityOption,
     days: { type: "array", items: { type: "string", enum: ["Mon", "Tue", "Wed", "Thu", "Fri"] }, maxItems: 5, uniqueItems: true,
       description: "Allowed meeting days; every meeting must fit. Empty means any day." },
     earliestStart: { ...clock, description: "Earliest permitted class start, local campus time (HH:MM)." },
@@ -213,7 +217,7 @@ const ScheduleTools = (() => {
 
   function findSwaps(input, ctx) {
     const current = ctx.state.plan || [];
-    const original = sections.find(section => section.id === input.sectionId);
+    const original = sections.find(section => section.id === input.replaceSectionId);
     if (!original || !current.includes(original.id)) throw new Error("Choose a section in the current plan to replace.");
     const categories = getRequirementsFor(ctx.student.programId).filter(cat => cat.courses.includes(original.courseCode));
     const core = categories.some(cat => cat.type === "specific");
@@ -222,6 +226,7 @@ const ScheduleTools = (() => {
     const alternatives = sections.filter(section => section.id !== original.id && !current.includes(section.id))
       .filter(section => !candidateCode || section.courseCode === candidateCode)
       .filter(section => section.courseCode === original.courseCode || (!core && categories.some(cat => cat.courses.includes(section.courseCode))))
+      .filter(section => matches(section, input))
       .filter(section => !input.sameTimeOnly || section.days.every(day => original.days.includes(day))
         && (!section.days.length || section.startTime >= original.startTime && section.endTime <= original.endTime))
       .map(section => ({ replacementSectionId: section.id, ...preview(current.map(id => id === original.id ? section.id : id), ctx),
@@ -279,29 +284,83 @@ const ScheduleTools = (() => {
       suggestions: best.map(item => ({ ...preview(item.chosen.map(s => s.id), ctx), score: item.score })) };
   }
 
-  function save(sectionIds, ctx, allowInvalidRemainder = false, source = "planner") {
-    const result = preview(sectionIds, ctx);
-    if (!result.valid && !allowInvalidRemainder) return { ok: false, error: "Plan was not changed. Resolve the listed problems first.", ...result };
-    setState({ plan: [...sectionIds] }, { planSource: source });
-    return { ok: true, ...result, message: "Demo plan saved in this browser. No courses were registered." };
+  function withAvailability(input, ctx) {
+    return input.unavailableTimes === undefined ? ctx : {
+      ...ctx, state: { ...ctx.state, unavailableTimes: input.unavailableTimes }
+    };
+  }
+
+  function apply(input, ctx) {
+    const actions = ["sectionIds", "addSectionId", "removeSectionId", "swap", "undo"].filter(key => Object.hasOwn(input, key));
+    if (actions.length > 1) throw new Error("Choose only one plan change: sectionIds, addSectionId, removeSectionId, swap or undo.");
+    const action = actions[0];
+    const changesAvailability = input.unavailableTimes !== undefined;
+    if (!action && !changesAvailability) throw new Error("Provide a plan change or unavailableTimes to save.");
+    if (action) {
+      if (!Object.hasOwn(input, "expectedPlan")) throw new Error("A plan change requires expectedPlan from fresh context or a preview.");
+      assertCurrentPlan(input.expectedPlan, ctx);
+    } else if (input.expectedPlan !== undefined) throw new Error("expectedPlan requires a plan change.");
+    if (changesAvailability) {
+      if (!Object.hasOwn(input, "expectedUnavailableTimes")) throw new Error("Saving unavailableTimes requires expectedUnavailableTimes from fresh context.");
+      if (availabilitySnapshot(input.expectedUnavailableTimes) !== availabilitySnapshot(ctx.state.unavailableTimes || [])) throw new Error("Unavailable times changed. Read context before saving again.");
+    } else if (input.expectedUnavailableTimes !== undefined) throw new Error("expectedUnavailableTimes requires unavailableTimes.");
+    if (action === "undo" && changesAvailability) throw new Error("Undo cannot be combined with unavailableTimes; save commitments separately.");
+
+    const current = ctx.state.plan || [];
+    const partial = changesAvailability ? { unavailableTimes: input.unavailableTimes.map(block => ({ ...block })) } : {};
+    let next = [...current];
+    let allowInvalid = !action || action === "removeSectionId";
+    const source = { sectionIds: "Apply schedule", addSectionId: "Add section", removeSectionId: "Remove section", swap: "Swap section" }[action];
+    if (action === "sectionIds") next = [...input.sectionIds];
+    if (action === "addSectionId") {
+      if (current.includes(input.addSectionId)) allowInvalid = !changesAvailability;
+      else {
+        if (current.length >= 6) throw new Error("At most six courses can be added with this tool.");
+        next.push(input.addSectionId);
+      }
+    }
+    if (action === "removeSectionId") next = current.filter(id => id !== input.removeSectionId);
+    if (action === "swap") {
+      if (!current.includes(input.swap.sectionId)) throw new Error("Section is no longer in the plan.");
+      next = current.map(id => id === input.swap.sectionId ? input.swap.replacementSectionId : id);
+    }
+    if (action === "undo") {
+      const history = getPlanHistory(ctx.state);
+      const last = history.at(-1);
+      if (!last) throw new Error("No previous plan to restore.");
+      if (JSON.stringify(last.after) !== JSON.stringify(current)) throw new Error("The plan changed outside the recorded history; it cannot be safely undone.");
+      next = [...last.before];
+      partial.planHistory = history.slice(0, -1);
+    }
+    // Validate against proposed commitments before either part is persisted.
+    const result = preview(next, withAvailability(input, ctx));
+    if (!result.valid && !allowInvalid) return { ok: false,
+      error: "Plan and unavailable times were not changed. Resolve the listed problems first.", ...result };
+    if (action) partial.plan = next;
+    setState(partial, { planSource: source, recordPlanHistory: action !== "undo" });
+    return { ok: true, ...result, ...(changesAvailability ? { unavailableTimes: partial.unavailableTimes, plan: result } : {}),
+      message: action === "undo" ? "Previous plan restored. Preferences and unavailable times were kept."
+        : !action ? "Unavailable times saved. Existing courses are unchanged; resolve any flagged conflicts."
+        : "Demo plan saved in this browser. No courses were registered." };
   }
 
   const definitions = [
     {
-      name: "get_schedule_context", description: "Read the active demo student's program, completed course codes, requirements, preferences, term, campus and current plan. Omits name, student ID, grades and free-text notes. Identify a student in the UI first.",
-      inputSchema: object(), readOnly: true,
-      run: (_, ctx) => {
+      name: "get_schedule_context", description: "Read the active demo student's program, completed course codes, requirements, preferences, term, campus, unavailable times and current plan. includeHistory adds up to ten recent plan snapshots, newest first. Omits name, student ID, grades and free-text notes. Identify a student in the UI first.",
+      inputSchema: object({ includeHistory: { type: "boolean", description: "Include plan history for undo; preferences and commitments are not undone." } }), readOnly: true,
+      run: (input, ctx) => {
         const prefs = ctx.state.preferences || {};
         return { program: getProgram(ctx.student.programId), term: getTerm(ctx.termId), campus: getCampus(ctx.campusId),
           completedCourseCodes: getCompletedCodes(ctx.student), requirements: computeRequirementProgress(ctx.student),
           preferences: { desiredCredits: prefs.desiredCredits || DEFAULT_CREDIT_LOAD, priority: prefs.priority || "balanced", interests: prefs.interests || [],
             days: prefs.days || [], timeOfDay: prefs.timeOfDay || "any", format: prefs.format || "any" },
           unavailableTimes: ctx.state.unavailableTimes || [], undoCount: getPlanHistory(ctx.state).length,
+          ...(input.includeHistory ? { history: getPlanHistory(ctx.state).slice().reverse().map(({ before, after, source, savedAt }) => ({ before, after, source, savedAt })) } : {}),
           plan: preview(ctx.state.plan || [], ctx), dataSource: "Embedded demo catalog; not live university availability." };
       }
     },
     {
-      name: "search_course_sections", description: "Search the selected term/campus (including online) by course code, title or interest. Returns section IDs, meetings, seats, prerequisite problems and degree fit. Eligible sections only by default. Does not edit the plan.",
+      name: "search_course_sections", description: "Search the selected term/campus (including online) by course code, title or interest. Returns section IDs, meetings, seats, prerequisite problems and degree fit. Eligible sections only by default. Optional days, times, format and unavailableTimes are hard constraints. Does not save.",
       inputSchema: object({ query: { type: "string", maxLength: 120 }, eligibleOnly: { type: "boolean" }, ...filters }), readOnly: true,
       run: (input, ctx) => {
         const query = (input.query || "").trim().toLowerCase();
@@ -315,96 +374,44 @@ const ScheduleTools = (() => {
       }
     },
     {
-      name: "suggest_schedules", description: "Generate up to three conflict-free drafts. Default to the saved credit target (12 credits when unset), preferring the closest total at or above the target within six courses. Override with targetCredits OR an exact courseCount. courseCodes are mandatory inclusions; fill with degree courses. Saved preferences rank results; supplied days, times and format are hard constraints. Does not save or enroll.",
-      inputSchema: object({ courseCount: { type: "integer", minimum: 1, maximum: 6 }, targetCredits: { type: "integer", minimum: 1, maximum: 24 }, courseCodes: ids, ...filters }), readOnly: true,
-      run: suggest
-    },
-    {
-      name: "preview_schedule", description: "Validate proposed section IDs without saving: checks time conflicts, duplicate courses, completed courses, prerequisites, seats, term and campus; returns meetings and credits. Empty list previews an empty plan.",
-      inputSchema: object({ sectionIds: ids }, ["sectionIds"]), readOnly: true,
-      run: (input, ctx) => preview(input.sectionIds, ctx)
-    },
-    {
-      name: "apply_schedule", description: "Replace the browser's demo plan with validated section IDs and refresh the visible calendar. Only use when the student requests a plan change. Pass expectedPlan from the latest context or suggestion to prevent overwriting subsequent edits. Empty sectionIds clears the plan. Never registers or finalizes courses.",
-      inputSchema: object({ sectionIds: ids, expectedPlan: expectedPlanSchema }, ["sectionIds", "expectedPlan"]), readOnly: false,
+      name: "suggest_schedules", description: "Generate up to three conflict-free drafts without saving. Default to saved credit target (12 if unset), closest total at or above target within six courses. Override with targetCredits OR exact courseCount; courseCodes are mandatory inclusions. Saved preferences rank results; days, times, format and unavailableTimes are hard constraints. Alternatively, replaceSectionId previews up to ten swaps for one current section, preserving all others. Core courses keep their code; electives share a requirement category. Returns expectedPlan for applying a draft or swap. Does not save commitments or enroll.",
+      inputSchema: object({ courseCount: { type: "integer", minimum: 1, maximum: 6 }, targetCredits: { type: "integer", minimum: 1, maximum: 24 }, courseCodes: ids,
+        replaceSectionId: { ...text, description: "Preview replacements for this planned section instead of generating full drafts; cannot combine with load or courseCodes options." },
+        courseCode: { ...text, description: "Only with replaceSectionId: restrict the replacement course." },
+        sameTimeOnly: { type: "boolean", description: "Only with replaceSectionId: keep meetings inside the original day/time windows." }, ...filters }), readOnly: true,
       run: (input, ctx) => {
-        assertCurrentPlan(input.expectedPlan, ctx);
-        return save(input.sectionIds, ctx, false, "Apply schedule");
+        if (input.replaceSectionId !== undefined) {
+          if (["courseCount", "targetCredits", "courseCodes"].some(key => Object.hasOwn(input, key))) throw new Error("replaceSectionId cannot be combined with courseCount, targetCredits or courseCodes.");
+          return findSwaps(input, ctx);
+        }
+        if (input.courseCode !== undefined || input.sameTimeOnly !== undefined) throw new Error("courseCode and sameTimeOnly require replaceSectionId.");
+        return suggest(input, ctx);
       }
     },
     {
-      name: "add_schedule_section", description: "Add one eligible section to the current browser demo plan and refresh the calendar. Rejects conflicts and duplicate courses. Repeating an existing section is a no-op. Never enrolls or finalizes.",
-      inputSchema: object({ sectionId: text }, ["sectionId"]), readOnly: false,
+      name: "preview_schedule", description: "Validate sectionIds (defaults to current plan) without saving: conflicts, duplicate/completed courses, prerequisites, seats, term, campus and unavailable times. Returns meetings, credits and metrics. explainSectionId adds eligibility, degree fit, preference score and trade-offs against that plan. Alternatively provide 2–5 schedules to compare; rankBy chooses a metric (lower is better). Comparison excludes invalid/empty options and flags differing credit loads. unavailableTimes overrides saved commitments for this request only.",
+      inputSchema: object({ sectionIds: ids, explainSectionId: text, unavailableTimes: availabilityOption,
+        schedules: { type: "array", maxItems: 5, items: object({ label: text, sectionIds: ids }, ["sectionIds"]), description: "Compare complete schedules; cannot combine with sectionIds or explainSectionId." },
+        rankBy: { ...rankBySchema, description: "Only with schedules; defaults to gapMinutes. Gaps include online meetings; travel time is not estimated." } }), readOnly: true,
       run: (input, ctx) => {
-        const current = ctx.state.plan || [];
-        if (current.includes(input.sectionId)) return { ok: true, ...preview(current, ctx), message: "Section already in the plan; nothing changed." };
-        if (current.length >= 6) throw new Error("At most six courses can be added with this tool.");
-        return save([...current, input.sectionId], ctx, false, "Add section");
+        if (input.schedules !== undefined) {
+          if (input.sectionIds !== undefined || input.explainSectionId !== undefined) throw new Error("schedules cannot be combined with sectionIds or explainSectionId.");
+          if (input.schedules.length < 2) throw new Error("Provide at least two schedules to compare.");
+          return compare(input, ctx);
+        }
+        if (input.rankBy !== undefined) throw new Error("rankBy requires schedules.");
+        const sectionIds = input.sectionIds || ctx.state.plan || [];
+        if (input.explainSectionId && sectionIds.some(id => !sections.some(section => section.id === id))) throw new Error("Unknown section in comparison plan");
+        return { ...preview(sectionIds, ctx), ...(input.explainSectionId ? { explanation: explain(input.explainSectionId, sectionIds, ctx) } : {}) };
       }
     },
     {
-      name: "remove_schedule_section", description: "Remove a section from the current browser demo plan and refresh the calendar. Can repair an invalid plan; returns any remaining problems. Repeating a removal is a no-op. Never drops a university registration.",
-      inputSchema: object({ sectionId: text }, ["sectionId"]), readOnly: false,
-      run: (input, ctx) => save((ctx.state.plan || []).filter(id => id !== input.sectionId), ctx, true, "Remove section")
-    },
-    {
-      name: "set_unavailable_times", description: "Save recurring weekly unavailable times for work, commuting or commitments. Replaces the list; read context and preserve existing blocks when adding one. Pass expectedUnavailableTimes from fresh context to prevent stale writes. Start/end are local campus times; end may be 24:00. Split overnight blocks into separate days. These hard constraints apply to search, drafts, validation and swaps. Does not remove existing courses; reports their conflicts. Use neutral labels if commitment details are private.",
-      inputSchema: object({ unavailableTimes: blocksSchema, expectedUnavailableTimes: blocksSchema }, ["unavailableTimes", "expectedUnavailableTimes"]), readOnly: false,
-      run: (input, ctx) => {
-        if (availabilitySnapshot(input.expectedUnavailableTimes) !== availabilitySnapshot(ctx.state.unavailableTimes || [])) throw new Error("Unavailable times changed. Read context before saving again.");
-        for (const block of input.unavailableTimes) if (block.startTime >= block.endTime) throw new Error("Unavailable time must end after it starts; split overnight commitments into two days.");
-        setState({ unavailableTimes: input.unavailableTimes.map(block => ({ ...block })) });
-        return { ok: true, unavailableTimes: input.unavailableTimes, plan: preview(ctx.state.plan || [], context()),
-          message: "Unavailable times saved. Existing courses are unchanged; resolve any flagged conflicts." };
-      }
-    },
-    {
-      name: "compare_schedules", description: "Compare two to five complete schedules without saving. Returns credits, campus days, class days, weekly gaps, earliest/latest times, early starts and evening meetings. Rank valid nonempty options by rankBy (lower is better). Gaps include online meetings and may contain commitments; no travel estimates. Flags unequal credit loads so a lighter schedule is not mistaken for a better fit.",
-      inputSchema: object({ schedules: { type: "array", maxItems: 5, items: object({ label: text, sectionIds: ids }, ["sectionIds"]) },
-        rankBy: { type: "string", enum: ["gapMinutes", "campusDays", "daysWithClasses", "earlyMeetings", "eveningMeetings"] } }, ["schedules"]), readOnly: true,
-      run: (input, ctx) => { if (input.schedules.length < 2) throw new Error("Provide at least two schedules to compare."); return compare(input, ctx); }
-    },
-    {
-      name: "explain_schedule_section", description: "Explain a section's eligibility, prerequisite status, degree fit, preference score and trade-offs against sectionIds (defaults to current plan). Shows schedule conflicts and whether other planned electives already fill the requirement. Read-only; does not claim optimality or graduation eligibility.",
-      inputSchema: object({ sectionId: text, sectionIds: ids }, ["sectionId"]), readOnly: true,
-      run: (input, ctx) => {
-        if (input.sectionIds?.some(id => !sections.some(section => section.id === id))) throw new Error("Unknown section in comparison plan");
-        return explain(input.sectionId, input.sectionIds || ctx.state.plan || [], ctx);
-      }
-    },
-    {
-      name: "find_schedule_swaps", description: "Preview replacements for one current section while preserving every other course. Same-course sections or electives in the same requirement category are considered; core courses retain their course code. Optional courseCode narrows candidates; sameTimeOnly keeps all replacement meetings inside the original day/time windows. Does not save. Use returned expectedPlan when applying a swap.",
-      inputSchema: object({ sectionId: text, courseCode: text, sameTimeOnly: { type: "boolean" } }, ["sectionId"]), readOnly: true,
-      run: findSwaps
-    },
-    {
-      name: "swap_schedule_section", description: "Atomically replace one planned section, keeping all other section IDs and their order unchanged. Pass expectedPlan from the swap preview. Validates the resulting plan and records one undo step. A different course can change credits and degree coverage; review the preview first. Never enrolls or drops courses.",
-      inputSchema: object({ sectionId: text, replacementSectionId: text, expectedPlan: expectedPlanSchema }, ["sectionId", "replacementSectionId", "expectedPlan"]), readOnly: false,
-      run: (input, ctx) => {
-        assertCurrentPlan(input.expectedPlan, ctx);
-        if (!(ctx.state.plan || []).includes(input.sectionId)) throw new Error("Section is no longer in the plan.");
-        return save(ctx.state.plan.map(id => id === input.sectionId ? input.replacementSectionId : id), ctx, false, "Swap section");
-      }
-    },
-    {
-      name: "get_schedule_history", description: "Read up to ten recent plan snapshots for the current student, term and campus, newest first. Includes manual edits as well as planner changes so undo never skips a later edit. Snapshots are local to this browser; preferences and unavailable times are not undone.",
-      inputSchema: object(), readOnly: true,
-      run: (_, ctx) => ({ expectedPlan: [...(ctx.state.plan || [])], entries: getPlanHistory(ctx.state).slice().reverse().map(({ before, after, source, savedAt }) => ({ before, after, source, savedAt })) })
-    },
-    {
-      name: "undo_schedule_change", description: "Restore the immediately previous plan snapshot (including manual changes). Pass expectedPlan from fresh context/history. Rejects stale state or a snapshot that is invalid under current availability or eligibility, rather than overwriting newer edits or ignoring constraints. Consumes one undo step; does not alter preferences, unavailable times or enrollment.",
-      inputSchema: object({ expectedPlan: expectedPlanSchema }, ["expectedPlan"]), readOnly: false,
-      run: (input, ctx) => {
-        assertCurrentPlan(input.expectedPlan, ctx);
-        const history = getPlanHistory(ctx.state);
-        const last = history.at(-1);
-        if (!last) throw new Error("No previous plan to restore.");
-        if (JSON.stringify(last.after) !== JSON.stringify(ctx.state.plan || [])) throw new Error("The plan changed outside the recorded history; it cannot be safely undone.");
-        const restored = preview(last.before, ctx);
-        if (!restored.valid) return { ok: false, error: "The previous plan is not valid under current constraints. Resolve the reported problems before undoing.", ...restored };
-        setState({ plan: [...last.before], planHistory: history.slice(0, -1) }, { recordPlanHistory: false });
-        return { ok: true, ...restored, message: "Previous plan restored. Preferences and unavailable times were kept." };
-      }
+      name: "apply_schedule", description: "Save changes to the browser demo plan only when the student requests them. Choose at most one: sectionIds replaces/clears the plan, addSectionId, removeSectionId, swap, or undo:true. Every plan change requires expectedPlan from fresh context or suggestions. Optionally save unavailableTimes (replaces all blocks, [] clears) with expectedUnavailableTimes from context, alone or atomically with a plan change except undo. Validates against proposed commitments before saving; availability-only saves and removals may leave flagged conflicts. Undo restores one valid snapshot, preserving commitments/preferences. Never enrolls or finalizes.",
+      inputSchema: object({ sectionIds: ids, addSectionId: text, removeSectionId: text,
+        swap: object({ sectionId: text, replacementSectionId: text }, ["sectionId", "replacementSectionId"]),
+        undo: { type: "boolean", enum: [true] }, expectedPlan: expectedPlanSchema,
+        unavailableTimes: { ...blocksSchema, description: "Save this complete list of weekly commitments. Read context and preserve existing blocks when adding. Use neutral labels for private commitments." },
+        expectedUnavailableTimes: blocksSchema }), readOnly: false, run: apply
     }
   ];
 
@@ -415,7 +422,11 @@ const ScheduleTools = (() => {
         if (options.signal?.aborted) throw new Error("Tool execution was cancelled.");
         validate(input, definition.inputSchema);
         if (input.earliestStart && input.latestEnd && input.earliestStart >= input.latestEnd) throw new Error("earliestStart must be before latestEnd.");
-        return run(input, context());
+        for (const block of input.unavailableTimes || []) if (block.startTime >= block.endTime) throw new Error("Unavailable time must end after it starts; split overnight commitments into two days.");
+        const ctx = context();
+        const result = run(input, readOnly ? withAvailability(input, ctx) : ctx);
+        return readOnly && input.unavailableTimes !== undefined ? { ...result, unavailableTimes: input.unavailableTimes,
+          expectedUnavailableTimes: ctx.state.unavailableTimes || [] } : result;
       } catch (error) {
         return { ok: false, error: error.message };
       }

@@ -108,22 +108,40 @@ Tools are registered only on `schedule.html`, after a student has been selected.
 
 ### Tools
 
-| Tool | Behavior |
+The browser exposes five tools. Related workflows are optional parameters on the
+same tools used by the UI; the former standalone tool names are no longer registered
+or callable.
+
+| Tool | Behavior and optional parameters |
 |---|---|
-| `get_schedule_context` | Read program, requirements, completed course codes, preferences, term/campus and plan. |
-| `search_course_sections` | Search eligible sections by code/title/interest; optional day, time and format constraints; `eligibleOnly: false` includes explanations for blocked sections. |
-| `suggest_schedules` | Generate drafts without saving. Defaults to the saved credit load or 12 credits. Accepts `targetCredits` (1–24) or exact `courseCount` (1–6), mandatory `courseCodes`, `days`, `earliestStart`, `latestEnd`, and `format`. |
-| `preview_schedule` | Check `sectionIds` and return meetings, credits, eligibility problems and conflicts without saving. |
-| `apply_schedule` | Replace the plan using `sectionIds` and an `expectedPlan` snapshot. Rejects stale snapshots and invalid plans. An empty list clears the plan. |
-| `add_schedule_section` | Add a `sectionId` without introducing invalid sections or conflicts. |
-| `remove_schedule_section` | Remove a `sectionId`, even from an invalid plan, and report remaining problems. |
-| `set_unavailable_times` | Save weekly commitment blocks; requires `unavailableTimes` and the previous `expectedUnavailableTimes` list. |
-| `compare_schedules` | Compare 2–5 labeled `{ sectionIds }` options by gaps, campus days, class days, early starts or evening meetings. |
-| `explain_schedule_section` | Explain eligibility, degree fit, actual preference score and trade-offs for a section in the current or supplied plan. |
-| `find_schedule_swaps` | Preview replacements for one planned section; optionally keep meetings within the original times or filter by `courseCode`. |
-| `swap_schedule_section` | Apply one validated replacement atomically using `sectionId`, `replacementSectionId` and `expectedPlan`. |
-| `get_schedule_history` | Read the ten most recent plan snapshots, newest first, including manual edits. |
-| `undo_schedule_change` | Restore the immediately previous plan using `expectedPlan`, if still valid under current constraints. |
+| `get_schedule_context` | Read program, requirements, completed courses, preferences, term/campus, unavailable times and plan. `includeHistory: true` adds `history` with the ten most recent plan snapshots, newest first. |
+| `search_course_sections` | Search by code/title/interest; optional day, time, format and `unavailableTimes` constraints. `eligibleOnly: false` includes blocked sections with explanations. |
+| `suggest_schedules` | Generate drafts using `targetCredits` (1–24) or exact `courseCount` (1–6), mandatory `courseCodes`, days, times, format and optional `unavailableTimes`. Alternatively, `replaceSectionId` previews swaps, optionally narrowed by `courseCode` or `sameTimeOnly` and the same hard constraints. Swap mode cannot use load or `courseCodes` options. |
+| `preview_schedule` | Validate `sectionIds` (defaults to current plan) and return meetings, credits, metrics and conflicts. `explainSectionId` adds an `explanation` against that plan. Alternatively, `schedules` compares 2–5 labeled `{ sectionIds }` options with optional `rankBy`; cannot combine with `sectionIds` or `explainSectionId`. Optional `unavailableTimes` applies to either mode. |
+| `apply_schedule` | Choose at most one plan change: `sectionIds` replaces/clears, `addSectionId`, `removeSectionId`, `swap: { sectionId, replacementSectionId }`, or `undo: true`. Every plan change requires `expectedPlan`. Optional `unavailableTimes` saves commitments, alone or with a plan change except undo, and requires `expectedUnavailableTimes`. Combined changes save atomically. |
+
+On search, suggest and preview, `unavailableTimes` replaces saved blocks **for that
+request only**. Omit it to use saved blocks; pass `[]` to try without them. These
+tools remain read-only. Responses with an override include `unavailableTimes` and
+the saved `expectedUnavailableTimes` snapshot for a later explicit save.
+On apply, the same parameter persists the complete list; preserve existing blocks
+when adding one. Availability-only saves keep current courses and flag conflicts.
+Removal can repair an invalid plan and reports remaining problems. Other plan
+edits must be valid; adding an existing section without new commitments is a no-op.
+Conflicting modes and parameters without their required companion are rejected.
+
+### Migrating existing calls
+
+| Former tool | Replacement |
+|---|---|
+| `set_unavailable_times` | `suggest_schedules({ unavailableTimes, ... })` for a request-only constraint; `apply_schedule({ unavailableTimes, expectedUnavailableTimes })` to save it. |
+| `compare_schedules` | `preview_schedule({ schedules, rankBy })` |
+| `explain_schedule_section` | `preview_schedule({ explainSectionId, sectionIds })`; read `result.explanation`. |
+| `find_schedule_swaps` | `suggest_schedules({ replaceSectionId, courseCode, sameTimeOnly })` |
+| `add_schedule_section` / `remove_schedule_section` | `apply_schedule({ addSectionId, expectedPlan })` / `apply_schedule({ removeSectionId, expectedPlan })` |
+| `swap_schedule_section` | `apply_schedule({ swap: { sectionId, replacementSectionId }, expectedPlan })` |
+| `get_schedule_history` | `get_schedule_context({ includeHistory: true })`; read `result.history`. |
+| `undo_schedule_change` | `apply_schedule({ undo: true, expectedPlan })` |
 
 ### Commitments, comparisons, swaps and undo
 
@@ -166,13 +184,21 @@ Example browser-assistant flow for “I work Tuesdays after noon”:
 
 ```js
 const context = await ScheduleTools.execute("get_schedule_context", {});
-await ScheduleTools.execute("set_unavailable_times", {
+const drafts = await ScheduleTools.execute("suggest_schedules", {
   unavailableTimes: [...context.unavailableTimes,
-    { day: "Tue", startTime: "12:00", endTime: "24:00", label: "Busy" }],
-  expectedUnavailableTimes: context.unavailableTimes
+    { day: "Tue", startTime: "12:00", endTime: "24:00", label: "Busy" }]
 });
-const drafts = await ScheduleTools.execute("suggest_schedules", {});
-// Review drafts before apply_schedule; inspect get_schedule_history to undo later.
+// No state has changed. After the student chooses a draft and requests saving:
+if (drafts.found) {
+  await ScheduleTools.execute("apply_schedule", {
+    sectionIds: drafts.suggestions[0].sectionIds,
+    expectedPlan: drafts.expectedPlan,
+    unavailableTimes: drafts.unavailableTimes,
+    expectedUnavailableTimes: drafts.expectedUnavailableTimes
+  });
+}
+// get_schedule_context({ includeHistory: true }) reads history;
+// apply_schedule({ undo: true, expectedPlan }) restores the previous plan.
 ```
 
 Typical agent flow: read context → search or suggest → preview → apply when the
@@ -202,7 +228,7 @@ most six courses. Explicit `courseCount` requests still require that exact count
 and replace the credit target for that request; do not pass both load options.
 Search is bounded at 50,000 nodes; `truncated` reports an incomplete search.
 
-All writes affect only the browser's demo `plan`. There is no enrollment or agent
+All writes affect only the browser's demo plan, unavailable times and local plan history. There is no enrollment or agent
 finalization tool. Names, student IDs, grades and free-text notes are omitted from
 the tool context. Course/section outputs are marked as untrusted content. The
 catalog and seat counts are static demo data from `js/data.js`, **not** the scraped
@@ -220,6 +246,7 @@ node --test tests/*.test.cjs
 Tests exercise the real demo data, eligibility and conflict checks, hard constraints,
 alternate sections, draft immutability, stale-plan protection, cancellation/storage
 errors, weekly availability boundaries, complete-schedule metrics, explanations,
+atomic plan/availability saves, request-only availability, consolidated UI calls,
 atomic swaps, persistent/scoped undo history, and mocked current/legacy/unsupported
 WebMCP registration and cleanup.
 Native assistant interoperability still requires a WebMCP-enabled browser.
