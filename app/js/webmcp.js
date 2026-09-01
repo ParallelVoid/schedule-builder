@@ -21,7 +21,8 @@
   async function register() {
     cleanup();
     const currentGeneration = generation;
-    activeContext = typeof document.modelContext?.registerTool === "function" ? document.modelContext : navigator.modelContext;
+    const usesDocumentContext = typeof document.modelContext?.registerTool === "function";
+    activeContext = usesDocumentContext ? document.modelContext : navigator.modelContext;
     if (typeof activeContext?.registerTool !== "function") {
       setStatus("WebMCP is not available in this browser. Manual planning still works on the Schedule page.");
       return;
@@ -30,7 +31,17 @@
     setStatus("Connecting scheduling tools…");
     try {
       for (const tool of ScheduleTools.tools) {
-        await activeContext.registerTool(tool, { signal: controller.signal });
+        if (usesDocumentContext) {
+          await document.modelContext.registerTool({
+            name: tool.name,
+            description: tool.description,
+            inputSchema: tool.inputSchema,
+            annotations: tool.annotations,
+            execute: tool.execute
+          }, { signal: controller.signal });
+        } else {
+          await navigator.modelContext.registerTool(tool, { signal: controller.signal });
+        }
         if (generation !== currentGeneration) return;
         registered.push(tool.name);
       }
