@@ -7,8 +7,8 @@ dark modes and saves the choice locally. Theme and calendar colours live in the
 the page renders.
 
 A static, front-end-only demo of an academic advising assistant. Pure HTML/CSS/vanilla JS —
-no build step, no backend, no database, no external API calls. All data lives in
-`js/data.js` and every calculation (requirement progress, prerequisite checks, scoring,
+no build step, no backend, no database, no external API calls. Catalog data lives in
+`js/course-data.js`, planning scaffolding lives in `js/data.js`, and every calculation (requirement progress, prerequisite checks, scoring,
 schedule conflicts) runs in the browser.
 
 ## Running it
@@ -45,18 +45,20 @@ profile with no completed courses.
 
 ## Editing the data
 
-Everything is in `js/data.js`:
+The browser-ready data is split into two files:
 
-- `campuses`, `terms`, `programs` — the basic catalog scaffolding
+- `js/course-data.js` — all course definitions and course offerings
+- `campuses`, `terms`, `programs` in `js/data.js` — the basic catalog scaffolding
 - `requirements` — degree requirement categories per program (`specific` = every course
   listed is required; `choose` = pick `count` courses from the list)
-- `courses` — the full course catalog, including `prerequisites` and `areas` (used to
-  match student interests)
-- `sections` — where/when each course is actually offered, per term
 - `students` — sample student records with completed courses
 
-Add a new student, course, or requirement by adding an entry to the relevant array — no
-other file needs to change for the data to show up in the UI.
+The 256 undergraduate CPSC, MATH, CHEM, STAT, and DSCI definitions retain their source titles,
+descriptions, credits, prerequisite text, and corequisite text. Vancouver campus suffixes
+are removed from course codes and source text. Since `courses.json` contains no section
+records, every scraped course has synthetic demo offerings inherited from its closest
+legacy course. `templateCourseCode`, `templateSectionId`, and `synthetic` preserve that
+provenance; instructors, schedules, rooms, formats, and seat counts are not live data.
 
 ## File structure
 
@@ -66,7 +68,8 @@ profile.html           Profile summary + course-planning preferences
 recommendations.html   Ranked, explained recommendations
 schedule.html          Weekly calendar, plan builder, compare, finalize
 css/styles.css         Shared styles
-js/data.js             All embedded demo data
+js/course-data.js      Full course catalog and course offerings
+js/data.js             Terms, programs, requirements and demo students
 js/app.js              Shared helpers (state, lookups, requirement/prereq/schedule math)
 js/theme.js            Persistent system/light/dark theme selection
 js/profile.js           profile.html logic
@@ -243,8 +246,8 @@ Search is bounded at 50,000 nodes; `truncated` reports an incomplete search.
 All writes affect only the browser's demo plan, unavailable times and local plan history. There is no enrollment or agent
 finalization tool. Names, student IDs, grades and free-text notes are omitted from
 the tool context. Course/section outputs are marked as untrusted content. The
-catalog and seat counts are static demo data from `js/data.js`, **not** the scraped
-`courses.json` or live university registration data. Other tabs reload the schedule
+course definitions come from `courses.json`; offerings and seat counts are synthetic
+demo data in `js/course-data.js`, **not** live university registration data. Other tabs reload the schedule
 when shared session state changes. A plan edit clears any old finalize message.
 
 ### Verification

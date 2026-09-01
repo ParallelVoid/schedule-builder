@@ -1,0 +1,2562 @@
+[
+  {
+    "title": "Computational Thinking",
+    "course_code": "CPSC_V",
+    "course_id": 100,
+    "credits": "3",
+    "description": "Meaning and impact of computational thinking. Solving problems using computational thinking, testing, debugging. How computers work. No prior computing experience required. Not for students with existing credit for or exemption from CPSC 107, CPSC 110 or APSC 160.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Systematic Program Design",
+    "course_code": "CPSC_V",
+    "course_id": 103,
+    "credits": "3",
+    "description": "Computation as a tool for systematic problem solving in non-computer-science disciplines. Introductory programming skills. Not for credit for students who have credit for, or exemption from, or are concurrently taking CPSC 110 or APSC 160. No programming experience expected.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Systematic Program Design",
+    "course_code": "CPSC_V",
+    "course_id": 107,
+    "credits": "3",
+    "description": "Fundamental computation and program structures. Continuing systematic program design from CPSC 103.",
+    "prerequisite": "CPSC 103.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Computation, Programs, and Programming",
+    "course_code": "CPSC_V",
+    "course_id": 110,
+    "credits": "4",
+    "description": "Fundamental program and computation structures. Introductory programming skills. Computation as a tool for information processing, simulation and modelling, and interacting with the world.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Models of Computation",
+    "course_code": "CPSC_V",
+    "course_id": 121,
+    "credits": "4",
+    "description": "Physical and mathematical structures of computation. Boolean algebra and combinations logic circuits; proof techniques; functions and sequential circuits; sets and relations; finite state machines; sequential instruction execution.",
+    "prerequisite": "Principles of Mathematics 12 or Pre-calculus 12",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Programming, Problem Solving, and Algorithms",
+    "course_code": "CPSC_V",
+    "course_id": 203,
+    "credits": "3",
+    "description": "Analysis of increasingly complex algorithmic problems, using a modern programming language and a variety of approaches. Problem decomposition and abstraction guide explorations of topics from applied algorithms, for example Voronoi Diagrams, Markov Chains, Bin Packing, and Graph Search. Not for students with credit for, or currently enrolled in, CPSC 210 or CPEN 221.",
+    "prerequisite": "One of CPSC 103, CPSC 110, APSC 160, EOSC 211, MATH 210, PHYS 210, COMM 337.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Software Construction",
+    "course_code": "CPSC_V",
+    "course_id": 210,
+    "credits": "4",
+    "description": "Design, development, and analysis of robust software components. Topics such as software design, computational models, data structures, debugging, and testing.",
+    "prerequisite": "One of CPSC 107, CPSC 110.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Computer Systems",
+    "course_code": "CPSC_V",
+    "course_id": 213,
+    "credits": "4",
+    "description": "Software architecture, operating systems, and I/O architectures. Relationships between application software, operating systems, and computing hardware; critical sections, deadlock avoidance, and performance; principles and operation of disks and networks.",
+    "prerequisite": "All of CPSC 121, CPSC 210.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Basic Algorithms and Data Structures",
+    "course_code": "CPSC_V",
+    "course_id": 221,
+    "credits": "4",
+    "description": "Design and analysis of basic algorithms and data structures; algorithm analysis methods, searching and sorting algorithms, basic data structures, graphs and concurrency.",
+    "prerequisite": "One of CPSC_V 210, CPEN_V 221 and either (a) one of CPSC_V 121, MATH_V 220, MATH_O 220 or (b) a score of 68% or higher in MATH_V 226.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Data Structures and Algorithms for Electrical Engineers",
+    "course_code": "CPSC_V",
+    "course_id": 259,
+    "credits": "4",
+    "description": "Advanced procedural programming. Fundamental algorithms for sorting and searching. Data structures including lists, trees, and hash tables. Introduction to scripting languages and file input/output.",
+    "prerequisite": "APSC 160.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Numerical Computation for Algebraic Problems",
+    "course_code": "CPSC_V",
+    "course_id": 302,
+    "credits": "3",
+    "description": "Numerical techniques for basic mathematical processes involving no discretization, and their analysis. Solution of linear systems, including analysis of round-off errors; norms and condition number; introduction to iterative techniques in linear algebra, including eigenvalue problems; solution to nonlinear equations.",
+    "prerequisite": "One of CPSC 103, CPSC 110, CPEN 221, EOSC 211, PHYS 210 and one of MATH 101, MATH 103, MATH 105, MATH 121, SCIE 001 and one of MATH 152, MATH 221, MATH 223.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Numerical Approximation and Discretization",
+    "course_code": "CPSC_V",
+    "course_id": 303,
+    "credits": "3",
+    "description": "Numerical techniques for basic mathematical processes involving discretization, and their analysis. Interpolation and approximation, including splines and least squares data fitting; numerical differentiation and integration; introduction to numerical initial value ordinary differential equations.",
+    "prerequisite": "One of CPSC 103, CPSC 110, CPEN 221, EOSC 211, PHYS 210 and one of MATH 101, MATH 103, MATH 105, MATH 121, SCIE 001 and one of MATH 152, MATH 221, MATH 223.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Relational Databases",
+    "course_code": "CPSC_V",
+    "course_id": 304,
+    "credits": "3",
+    "description": "Overview of database systems, ER models, logical database design and normalization, formal relational query languages, SQL and other commercial languages, data warehouses, special topics.",
+    "prerequisite": "CPSC_V 221 or DSCI_V 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Software Engineering",
+    "course_code": "CPSC_V",
+    "course_id": 310,
+    "credits": "4",
+    "description": "Specification, design, validation, evolution and construction of modern software systems, within the context of socially and professionally relevant domains such as ethics, intellectual property, and information security.",
+    "prerequisite": "All of CPSC 213, CPSC 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Definition of Programming Languages",
+    "course_code": "CPSC_V",
+    "course_id": 311,
+    "credits": "3",
+    "description": "Comparative study of advanced programming language features. Statement types, data types, variable binding, parameter passing mechanisms. Methods for syntactic and semantic description of programming languages.",
+    "prerequisite": "CPSC 210.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Functional and Logic Programming",
+    "course_code": "CPSC_V",
+    "course_id": 312,
+    "credits": "3",
+    "description": "Principles of symbolic computing, using languages based upon first-order logic and the lambda calculus. Algorithms for implementing such languages. Applications to artificial intelligence and knowledge representation.",
+    "prerequisite": "One of CPSC 210, CPEN 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Computer Hardware and Operating Systems",
+    "course_code": "CPSC_V",
+    "course_id": 313,
+    "credits": "3",
+    "description": "Instruction sets, pipelining, code optimization, caching, virtual memory management, dynamically linked libraries, exception processing, execution time of programs.",
+    "prerequisite": "CPSC_V 213 and either CPSC_V 221 or DSCI_V 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Computer Graphics",
+    "course_code": "CPSC_V",
+    "course_id": 314,
+    "credits": "3",
+    "description": "Human vision and colour; geometric transformations; algorithms for 2-D and 3-D graphics; hardware and system architectures; shading and lighting; animation.",
+    "prerequisite": "CPSC_V 221 and one of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253, MATH_O 200 and one of MATH_V 152, MATH_V 221, MATH_V 223, MATH_O 222.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Computer Networking",
+    "course_code": "CPSC_V",
+    "course_id": 317,
+    "credits": "3",
+    "description": "Computer networking, basic communication protocols, network infrastructure and routing. Common application-level protocols and principles associated with developing distributed applications.",
+    "prerequisite": "CPSC_V 213 and either CPSC_V 221 or DSCI_V 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Software Engineering Project",
+    "course_code": "CPSC_V",
+    "course_id": 319,
+    "credits": "4",
+    "description": "The design, implementation, and test of a large software system, using a team approach.",
+    "prerequisite": "CPSC 310.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Intermediate Algorithm Design and Analysis",
+    "course_code": "CPSC_V",
+    "course_id": 320,
+    "credits": "3",
+    "description": "Systematic study of basic concepts and techniques in the design and analysis of algorithms, illustrated from various problem areas. Topics include models of computation; choice of data structures; and graph-theoretic, algebraic, and text processing algorithms.",
+    "prerequisite": "All of (a) CPSC_V 221 or DSCI_V 221, (b) at least 3 credits from MATH_V or STAT_V at 200 level or above or MATH_O 200, MATH_O 220, MATH_O 222, MATH_O 225, MATH_O 307, STAT_O 121, STAT_O 203, STAT_O 205, STAT_O 230, STAT_O 303 or any course on the STAT_V 200 credit exclusion: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… or HES_O 340, HMKN_O 205, POLI_O 400, PSYO_O 271, STAT_O 124.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Artificial Intelligence",
+    "course_code": "CPSC_V",
+    "course_id": 322,
+    "credits": "3",
+    "description": "Problem-solving and planning. State/action models and graph searching. Natural language understanding. Computational vision. Applications of artificial intelligence.",
+    "prerequisite": "Either CPSC_V 221 or DSCI_V 221. Equivalency: AI_V 322.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Applied Machine Learning",
+    "course_code": "CPSC_V",
+    "course_id": 330,
+    "credits": "3",
+    "description": "Application of machine learning tools, with an emphasis on solving practical problems. Data cleaning, feature extraction, supervised and unsupervised machine learning, reproducible workflows, and communicating results.",
+    "prerequisite": "Either (a) one of CPSC_V 203, CPSC_V 210, CPEN_V 221, DSCI_V 221 or (b) MATH_V 210 and one of CPSC_V 107, CPSC_V 110.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Computer Security",
+    "course_code": "CPSC_V",
+    "course_id": 337,
+    "credits": "3",
+    "description": "Fundamentals of computer security and privacy. Cryptography, network security, and application security. Security assessments, problem diagnosis, defensive strategies. Impacts and outcomes of security design decisions.",
+    "prerequisite": "CPSC_V 213.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Machine Learning and Data Mining",
+    "course_code": "CPSC_V",
+    "course_id": 340,
+    "credits": "3",
+    "description": "Models of algorithms for dimensionality reduction, nonlinear regression, classification, clustering and unsupervised learning; applications to computer graphics, computer games, bio-informatics, information retrieval, e-commerce, databases, computer vision and artificial intelligence.",
+    "prerequisite": "All of (a) one of CPSC_V 221, DSCI_V 221 (b) one of MATH_V 152, MATH_V 221, MATH_V 223, MATH_O 222 (c) one of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253, MATH_V 254, MATH_O 200 (d) one of STAT_V 241, STAT_V 251, ECON_V 325, ECON_V 327, MATH_V 302, STAT_V 302, MATH_V 318, STAT_O 302.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Human Computer Interaction Methods",
+    "course_code": "CPSC_V",
+    "course_id": 344,
+    "credits": "3",
+    "description": "Basic tools and techniques, teaching a systematic approach to interface design, task analysis, analytic and empirical evaluation methods.",
+    "prerequisite": "One of CPSC 210, CPEN 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Honours Research Seminar",
+    "course_code": "CPSC_V",
+    "course_id": 349,
+    "credits": "0",
+    "description": "Students will attend a series of research seminars presented by faculty members, produce a thesis proposal, and choose their honours thesis supervisor. Available to Honours students. Majors students with satisfactory standing may also be permitted to enrol.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Databases in Data Science",
+    "course_code": "CPSC_V",
+    "course_id": 368,
+    "credits": "3",
+    "description": "Overview of relational and non-relational database systems, role and usage of a database when querying data, data modelling, query languages, and query optimization.",
+    "prerequisite": "One of CPSC_V 203, CPSC_V 210, CPEN_V 221, DSCI_V 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Numerical Linear Algebra",
+    "course_code": "CPSC_V",
+    "course_id": 402,
+    "credits": "3",
+    "description": "Investigation of the practical techniques of computational linear algebra. Orthogonal transformations and their application to the solution of linear equations, the eigenproblem, and linear least squares. Complete solution of the symmetric eigenproblem, including bisection and the QR method. Refinements of these techniques for sparse matrices.",
+    "prerequisite": "One of CPSC 302, CPSC 303, MATH 307.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Relational Databases",
+    "course_code": "CPSC_V",
+    "course_id": 404,
+    "credits": "3",
+    "description": "Physical database design, indexing, external mergesort, relational query processing and optimization, transaction processing, concurrency control, crash recovery, special topics.",
+    "prerequisite": "CPSC 304 and one of CPSC 213, CPSC 261, CPEN 212.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Computational Optimization",
+    "course_code": "CPSC_V",
+    "course_id": 406,
+    "credits": "3",
+    "description": "Formulation and analysis of algorithms for continuous and discrete optimization problems; linear, nonlinear, network, dynamic, and integer optimization; large-scale problems; software packages and their implementation; duality theory and sensitivity.",
+    "prerequisite": "One of CPSC 302, CPSC 303, MATH 307.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Software Engineering",
+    "course_code": "CPSC_V",
+    "course_id": 410,
+    "credits": "3",
+    "description": "Specification, design, construction and validation of multi-version software systems.",
+    "prerequisite": "Either (a) CPSC 310 or (b) all of CPEN 321, CPEN 331.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Compiler Construction",
+    "course_code": "CPSC_V",
+    "course_id": 411,
+    "credits": "3",
+    "description": "A practical introduction to lexical analysis, syntactic analysis, type-checking, code generation and optimization. This will be used to design and implement a compiler for a small language.",
+    "prerequisite": "All of CPSC 213, CPSC 221, CPSC 311.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Operating Systems Design and Implementation",
+    "course_code": "CPSC_V",
+    "course_id": 415,
+    "credits": "4",
+    "description": "Team-based design and implementation of a complete operating system, with emphasis on applicability to modern hardware and the practical implementation of operating systems concepts.",
+    "prerequisite": "All of the following with a minimum grade of 76% in each of: (a) CPSC_V 310 or CPEN_V 321, (b) CPSC_V 313 or CPEN_V 331, and (c) CPSC_V 317 or ELEC_V 331.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Distributed Systems",
+    "course_code": "CPSC_V",
+    "course_id": 416,
+    "credits": "3",
+    "description": "Concepts and design of distributed systems. Communication architecture and models for interprocess communication. Process migration, naming, distributed file systems, fault tolerance, and concurrency control.",
+    "prerequisite": "One of CPSC 313, CPEN 331 and one of CPSC 317, ELEC 331.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Computer Networking",
+    "course_code": "CPSC_V",
+    "course_id": 417,
+    "credits": "3",
+    "description": "Network protocols and architecture including internetworking, the Internet, layered communication protocols, routing, flow and congestion control, network performance, wired and wireless data communication.",
+    "prerequisite": "All of CPSC_V 313, CPSC_V 317.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Parallel Computation",
+    "course_code": "CPSC_V",
+    "course_id": 418,
+    "credits": "3",
+    "description": "Algorithms, architectures, and programming paradigms for parallel computation. Shared memory, message passing, and data parallel architectures and programming models. Parallel algorithms including reduce, scan, and sorting networks. Reasoning about the correctness of parallel programs. Performance analysis and measurement for parallel programs.",
+    "prerequisite": "CPSC 320 and one of CPSC 261, CPSC 313, CPEN 212, CPEN 411.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Algorithms Design and Analysis",
+    "course_code": "CPSC_V",
+    "course_id": 420,
+    "credits": "3",
+    "description": "The study of advanced topics in the design and analysis of algorithms and associated data structures. Topics include algorithms for graph-theoretic; algebraic and geometric problems; algorithms on nonsequential models; complexity issues; approximation algorithms.",
+    "prerequisite": "[CPSC320]",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Theory of Computing",
+    "course_code": "CPSC_V",
+    "course_id": 421,
+    "credits": "3",
+    "description": "Characterizations of computability (using machines, languages and functions). Universality, equivalence and Church's thesis. Unsolvable problems. Restricted models of computation. Finite automata, grammars and formal languages.",
+    "prerequisite": "One of CPSC 320 or MATH 220 or MATH 226.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Natural Language Processing",
+    "course_code": "CPSC_V",
+    "course_id": 423,
+    "credits": "3",
+    "description": "Fundamentals of data-driven natural language processing, including applications (machine translation, summarization, question answering), text representations (word embeddings, language models), and statistical and neural-network methods.",
+    "prerequisite": "Either CPSC_V 340 or both (a) one of AI_V 240, CPSC_V 330 and (b) one of STAT_V 200, STAT_V 251, ECON_V 325, ECON_V 327, MATH_V 302, STAT_V 302, MATH_V 318.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Geometric Modelling",
+    "course_code": "CPSC_V",
+    "course_id": 424,
+    "credits": "3",
+    "description": "Digital representation of curves and surfaces, including splines, subdivision surfaces and meshes. Principles, algorithms and mathematical foundations for geometry representation in computer graphics, computer vision, fabrication, CAD/CAM, and medical imaging. Algorithms for acquisition, creation, representation, and processing of 3D shapes.",
+    "prerequisite": "One of MATH 152, MATH 221, MATH 223 and one of MATH 200, MATH 217, MATH 226, MATH 253.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Computer Vision",
+    "course_code": "CPSC_V",
+    "course_id": 425,
+    "credits": "3",
+    "description": "Introduction to the processing and interpretation of images. Image sensing, sampling, and filtering. Algorithms for colour analysis, texture description, stereo imaging, motion interpretation, 3D shape recovery, and recognition.",
+    "prerequisite": "CPSC_V 221 and one of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253, MATH_V 254 and one of MATH_V 111, MATH_V 131, MATH_V 152, MATH_V 221, MATH_V 223.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Computer Animation",
+    "course_code": "CPSC_V",
+    "course_id": 426,
+    "credits": "3",
+    "description": "Motion in computer graphics for characters and their environments. Keyframing, inverse kinematics, particle systems, rigid body dynamics, contact and collision, controller-based active motion, motion capture.",
+    "prerequisite": "CPSC 314.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Video Game Programming",
+    "course_code": "CPSC_V",
+    "course_id": 427,
+    "credits": "3",
+    "description": "Video game programming techniques and technologies, including rendering, animation, interaction, game AI, real-time software development for games; start-to-finish simple video-game design and implementation. [1.5–1.5-1]",
+    "prerequisite": "CPSC_V 314 and one of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253 and one of MATH_V 152, MATH_V 221, MATH_V 223.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Computers and Society",
+    "course_code": "CPSC_V",
+    "course_id": 430,
+    "credits": "3",
+    "description": "Impact of computer technology on society; historical perspectives; social and economic consequences of large-scale information processing systems and automatic control; legal and ethical problems in computer applications. Computers and the individual: machine versus human capabilities, fact and fancy; problematic interface between man and machine.",
+    "prerequisite": "3 credits of Computer Science and at least third-year standing.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Topics in Computer Science",
+    "course_code": "CPSC_V",
+    "course_id": 436,
+    "credits": "1-6",
+    "description": "Selected topics in a specific area within Computer Science. May be taken more than once for credit with permission of the department.",
+    "prerequisite": "Third-year standing in a Computer Science or Computer Engineering specialization, and permission of the department.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Machine Learning",
+    "course_code": "CPSC_V",
+    "course_id": 440,
+    "credits": "3",
+    "description": "Advanced machine learning techniques focusing on probabilistic models. Deep learning and differentiable programming, exponential families and Bayesian inference, probabilistic graphical models and other generative models, Monte Carlo and variational inference methods.",
+    "prerequisite": "Either CPSC_V 340 or both (a) AI_V 240 and (b) one of STAT_V 251, ECON_V 325, ECON_V 327, MATH_V 302, STAT_V 302, MATH_V 318.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Methods for Human Computer Interaction",
+    "course_code": "CPSC_V",
+    "course_id": 444,
+    "credits": "3",
+    "description": "Design and evaluation methodologies and theories; formal models of the user including visual, motor, and information processing; advanced evaluation methods including laboratory experiments and field studies; HCI research frontiers.",
+    "prerequisite": "CPSC 344 and one of STAT 200, STAT 201, STAT 203, STAT 241, STAT 251, BIOL 300, COMM 291, ECON 325, ECON 327, FRST 231, GEOG 374, KIN 206, KIN 371, POLI 380, PSYC 218, PSYC 278, PSYC 366, SOCI 328.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Algorithms in Bioinformatics",
+    "course_code": "CPSC_V",
+    "course_id": 445,
+    "credits": "3",
+    "description": "Sequence alignment, phylogenetic tree reconstruction, prediction of RNA and protein structure, gene finding and sequence annotation, gene expression, and biomolecular computing.",
+    "prerequisite": "CPSC 320. and either BMEG 250 or six credits of BIOL beyond BIOL 111.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Visualization",
+    "course_code": "CPSC_V",
+    "course_id": 447,
+    "credits": "3",
+    "description": "Design and implementation of static and interactive visualizations. Selection of appropriate visualization methods for given combinations of data type and intended analysis task. Assessment of visual representations according to design and perceptual principles.",
+    "prerequisite": "One of CPSC 310, CPEN 321.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Directed Studies in Computer Science",
+    "course_code": "CPSC_V",
+    "course_id": 448,
+    "credits": "3-6",
+    "description": "Open ordinarily to students in Computer Science with at least a 72% average and permission of the department. The course may consist of supervised reading, participation in a seminar, and one or more programming projects.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Honours Thesis",
+    "course_code": "CPSC_V",
+    "course_id": 449,
+    "credits": "6",
+    "description": "Under supervision of a faculty member, students investigate a research topic and prepare a thesis.",
+    "prerequisite": "[CPSC349]",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Applied Industry Practices",
+    "course_code": "CPSC_V",
+    "course_id": 455,
+    "credits": "3",
+    "description": "Hands-on project, mentored by industry experts, integrating skills relevant to early career in the computing industry: technical skills, communication, teamwork, networking and portfolio building.",
+    "prerequisite": "One of CPSC 310, CPEN 321.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Student Directed Seminars",
+    "course_code": "CPSC_V",
+    "course_id": 490,
+    "credits": "3",
+    "description": "Self-directed, collaborative studies, in a group-learning environment, initiated and coordinated by senior undergraduate students with the supervision of a faculty advisor. Course structure, enrolment and delivery methods will comply with the Handbook for Student Directed Seminars.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Interactive Digital Media Practicum",
+    "course_code": "CPSC_V",
+    "course_id": 491,
+    "credits": "6",
+    "description": "Design and implementation of interactive digital media systems using modern processes and tools. Projects provided by external clients or vetted entrepreneurial pitches are developed by interdisciplinary teams composed of one CPSC_V 491 student and multiple Master of Digital Media students.",
+    "prerequisite": "All of CPSC_V 221, CPSC_V 310, CPSC_V 344 and Third-year standing. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Differential Calculus with Applications",
+    "course_code": "MATH_V",
+    "course_id": 100,
+    "credits": "3",
+    "description": "Derivatives of elementary functions. Applications and modelling: graphing, optimization. Consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "A score of 80% or higher in BC Pre-calculus 12. High school calculus is strongly recommended.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Integral Calculus with Applications",
+    "course_code": "MATH_V",
+    "course_id": 101,
+    "credits": "3",
+    "description": "The definite integral, integration techniques, applications, modelling, infinite series. Equivalency: MATH_V 103, MATH_V 105.",
+    "prerequisite": "One of MATH_V 100, MATH_V 102, MATH_V 104, MATH_V 110, MATH_V 120, MATH_V 180, MATH_V 184, MATH_O 100.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Differential Calculus with Applications to Life Sciences",
+    "course_code": "MATH_V",
+    "course_id": 102,
+    "credits": "3",
+    "description": "Functions, derivatives, optimization, growth and decay, discrete probability. Equivalency: MATH_V 100, 104.",
+    "prerequisite": "High-school calculus and a score of 80% or higher in BC Principles of Mathematics 12 or Pre-calculus 12.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Integral Calculus with Applications to Life Sciences",
+    "course_code": "MATH_V",
+    "course_id": 103,
+    "credits": "3",
+    "description": "Antiderivatives and definite integrals, infinite series, applications to probability and dynamical systems. Equivalency: MATH_V 101, 105.",
+    "prerequisite": "One of MATH_V 100, MATH_V 102, MATH_V 104, MATH_V 110, MATH_V 120, MATH_V 180, MATH_V 184.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Differential Calculus with Applications to Commerce and Social Sciences",
+    "course_code": "MATH_V",
+    "course_id": 104,
+    "credits": "3",
+    "description": "Derivatives and rates of change, exponential and trigonometric functions, Newton's method, Taylor polynomials, maxima and minima, and graphing. Equivalency: MATH_V 100, 102.",
+    "prerequisite": "High-school calculus and a score of 80% or higher in BC Principles of Mathematics 12 or Pre-calculus 12.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Integral Calculus with Applications to Commerce and Social Sciences",
+    "course_code": "MATH_V",
+    "course_id": 105,
+    "credits": "3",
+    "description": "Antiderivatives, the definite integral, techniques of integration, infinite series, partial derivatives, maxima and minima with constraints, discrete and continuous random variables. Equivalency: MATH_V 101, 103.",
+    "prerequisite": "One of MATH 100, MATH 102, MATH 104, MATH 110, MATH 120, MATH 180, MATH 184.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Differential Calculus",
+    "course_code": "MATH_V",
+    "course_id": 110,
+    "credits": "6",
+    "description": "Topics as for MATH 100, but including relevant topics from algebra, geometry, functions, trigonometry, logarithms, and exponentials. [3-0-1.5; 3-0-1.5]",
+    "prerequisite": "A grade of 65% or higher in BC Principles of Mathematics 12 or Pre-calculus 12.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Matrix Algebra",
+    "course_code": "MATH_V",
+    "course_id": 111,
+    "credits": "3",
+    "description": "Systems of linear equations, operations on matrices, determinants, eigenvalues and eigenvectors, diagonalization of symmetric matrices. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… . Equivalency: MATH_V 221.",
+    "prerequisite": "Either (a) one of MATH_V 100, MATH_V 102, MATH_V 104, MATH_V 110, MATH_V 120, MATH_V 180, MATH_V 184, MATH_O 100 or (b) advanced credit for MATH_V 100, or (c) SCIE_V 001 as a co-requisite.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Honours Differential Calculus",
+    "course_code": "MATH_V",
+    "course_id": 120,
+    "credits": "4",
+    "description": "Limits, derivatives, Mean Value Theorem and applications, elementary functions, optimization, Taylor series, approximation. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "High-school calculus and one of (a) a score of 95% or higher in BC Principles of Mathematics 12 or Pre-calculus 12; or (b) permission from the Mathematics Department Head.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Honours Integral Calculus",
+    "course_code": "MATH_V",
+    "course_id": 121,
+    "credits": "4",
+    "description": "Definite integrals and the Fundamental Theorem of Calculus, techniques and applications of integration, infinite series. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… .",
+    "prerequisite": "Either a) a score of 68% or higher in MATH_V 120, b) a score of 80% or higher in MATH_V 100, MATH_V 102, MATH_V 104, MATH_V 180, MATH_V 184, or c) a score of 5 in AP Calculus AB.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Honours Linear Algebra",
+    "course_code": "MATH_V",
+    "course_id": 131,
+    "credits": "3",
+    "description": "Matrices, eigenvectors, diagonalization, orthogonality, linear systems, applications. Students who obtain credit for MATH_V 131 cannot in the same or later terms obtain credit for MATH_V 111, MATH_V 152, or MATH_V 221. Equivalency: MATH_V 223.",
+    "prerequisite": "One of (a) one of MATH_V 120, MATH_V 121, SCIE_V 001, or (b) a score of 80% or higher in one of MATH_V 100, MATH_V 102, MATH_V 104, MATH_V 110, MATH_V 180, MATH_V 184, or (c) a score of 68% or higher in one of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 152, MATH_V 111, MATH_V 221, or (d) SCIE_V 001 as a corequisite.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Linear Systems",
+    "course_code": "MATH_V",
+    "course_id": 152,
+    "credits": "3",
+    "description": "2D and 3D geometry, vectors and matrices, eigenvalues and vibration, physical applications. Laboratories demonstrate computer solutions of large systems. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… [3-1*-0]",
+    "prerequisite": "",
+    "corequisite": "MATH_V 101.",
+    "sections": []
+  },
+  {
+    "title": "Differential Calculus with Applications",
+    "course_code": "MATH_V",
+    "course_id": 180,
+    "credits": "4",
+    "description": "Topics as for Math 100; intended for students with no previous knowledge of Calculus. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… . Not for credit for students with AP Calculus AB, AP Calculus BC, or a passing score on the UBC-SFU-UVIC-UNBC Calculus Challenge Examination.",
+    "prerequisite": "A grade of 80% or higher in BC Principles of Mathematics 12 or Pre-calculus 12.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Differential Calculus for Social Science and Commerce",
+    "course_code": "MATH_V",
+    "course_id": 184,
+    "credits": "4",
+    "description": "Topics as for Math 104; intended for students with no previous knowledge of Calculus. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… . Not for credit for students with AP Calculus AB, AP Calculus BC, or a passing score on the UBC-SFU-UVIC-UNBC Calculus Challenge Examination.",
+    "prerequisite": "A grade of 80% or higher in BC Principles of Mathematics 12 or Pre-calculus 12.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Calculus Survey",
+    "course_code": "MATH_V",
+    "course_id": 190,
+    "credits": "4",
+    "description": "Functions, derivatives, integrals, curve sketching growth functions, volume calculations. Only for credit in the Faculty of Forestry and Environmental Stewardship. Students with credit for MATH_V 100, 102, 104, 120, 180, or 184 cannot in the same term or later terms obtain credit for MATH_V 190.",
+    "prerequisite": "Principles of Mathematics 12 or Pre-calculus 12 and registration in the B.S.F. or B.Sc.N. programs.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Calculus III",
+    "course_code": "MATH_V",
+    "course_id": 200,
+    "credits": "3",
+    "description": "Analytic geometry in 2 and 3 dimensions, partial and directional derivatives, chain rule, maxima and minima, second derivative test, Lagrange multipliers, multiple integrals with applications. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… .",
+    "prerequisite": "One of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 121, SCIE_V 001, MATH_O 101, MATH_O 103.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Mathematical Computing",
+    "course_code": "MATH_V",
+    "course_id": 210,
+    "credits": "3",
+    "description": "Introduction to mathematical software and numerical methods. Numbers, arrays, functions, vectorization and iteration. Sequences and series, root finding, numerical integration, numerical methods for differential equations, systems of linear equations, mathematical graphics.",
+    "prerequisite": "One of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 121, SCIE_V 001, MATH_O 101, MATH_O 103",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Elementary Differential Equations I",
+    "course_code": "MATH_V",
+    "course_id": 215,
+    "credits": "3",
+    "description": "First-order equations; linear equations; linear systems; Laplace transforms; numerical methods; trajectory analysis of plane nonlinear systems. Applications of these topics will be emphasized. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… .",
+    "prerequisite": "One of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 121, SCIE_V 001, MATH_O 101, MATH_O 103 and one of MATH_V 152, MATH_V 221, MATH_V 223, MATH_O 222",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Multivariable and Vector Calculus",
+    "course_code": "MATH_V",
+    "course_id": 217,
+    "credits": "4",
+    "description": "Partial differentiation, extreme values, multiple integration, vector fields, line and surface integrals, the divergence theorem, Green's and Stokes' theorems. Intended for students in Honours Physics and Engineering Physics. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "A score of 68% or higher in one of PHYS_V 102, PHYS_V 108, PHYS_V 118, PHYS_V 153, PHYS_V 158, SCIE_V 001 and a score of 68% or higher in one of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 121, SCIE_V 001, MATH_O 101, MATH_O 103",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Mathematical Proof",
+    "course_code": "MATH_V",
+    "course_id": 220,
+    "credits": "3",
+    "description": "Sets and functions; induction; cardinality; properties of the real numbers; sequences, series, and limits. Logic, structure, style, and clarity of proofs emphasized throughout.",
+    "prerequisite": "Either (a) a score of 64% or higher in one of MATH_V 101, MATH_V 103, MATH_V 105, SCIE_V 001, MATH_O 101, MATH_O 103 or (b) one of MATH_V 121, MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253, MATH_V 254, MATH_O 200.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Matrix Algebra",
+    "course_code": "MATH_V",
+    "course_id": 221,
+    "credits": "3",
+    "description": "Systems of linear equations, operations on matrices, determinants, eigenvalues and eigenvectors, diagonalization of symmetric matrices. This course is intended for first and second year students. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… Equivalency: MATH_V 111.",
+    "prerequisite": "Either (a) one of MATH_V 100, MATH_V 102, MATH_V 104, MATH_V 110, MATH_V 120, MATH_V 180, MATH_V 184, SCIE_V 001, MATH_O 100 or (b) advanced credit for MATH_V 100, or (c) SCIE_V 001 as a corequisite.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Honours Linear Algebra",
+    "course_code": "MATH_V",
+    "course_id": 223,
+    "credits": "3",
+    "description": "Matrices, eigenvectors, diagonalization, orthogonality, linear systems, applications. This course is intended for first and second year students. Students who obtain credit for MATH_V 223 cannot in the same or later terms obtain credit for MATH_V 111, MATH_V 152, or MATH_V 221. Equivalency: MATH_V 131.",
+    "prerequisite": "One of (a) one of MATH_V 120, MATH_V 121, SCIE_V 001, or (b) a score of 80% or higher in one of MATH_V 100, MATH_V 102, MATH_V 104, MATH_V 110, MATH_V 180, MATH_V 184, MATH_O 100, or (c) a score of 68% or higher in one of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 111, MATH_V 152, MATH_V 221, MATH_O 101, MATH_O 103, MATH_O 221, or (d) SCIE_V 001 as a corequisite.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Calculus I",
+    "course_code": "MATH_V",
+    "course_id": 226,
+    "credits": "3",
+    "description": "Functions of several variables: limits, continuity, differentiability; implicit functions; Taylor's theorem; extrema; Lagrange multipliers; multiple integration, Fubini's theorem; improper integrals. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "Either (a) a score of 68% or higher in MATH_V 121 or (b) a score of 80% or higher in one of MATH_V 101, MATH_V 103, MATH_V 105, SCIE_V 001, MATH_O 101, MATH_O 103",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Calculus II",
+    "course_code": "MATH_V",
+    "course_id": 227,
+    "credits": "3",
+    "description": "Parametrization of curves and surfaces; line and surface integrals; theorems of Green, Gauss, Stokes; applications to physics and/or introduction to differential forms. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "MATH 226. Prerequisite grade requirement: 68% in MATH226.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Marvels of Mathematics",
+    "course_code": "MATH_V",
+    "course_id": 230,
+    "credits": "3",
+    "description": "A variety of topics in mathematics, showcasing its beauty and utility. Intended for a general audience of students whose degrees have no mathematics requirements, but who may be curious about practical and recreational mathematics. Not for credit in the Faculty of Science. Students who obtain UBC credit for any other mathematics course cannot in the same or later years obtain credit for MATH 230.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Multivariable Calculus",
+    "course_code": "MATH_V",
+    "course_id": 253,
+    "credits": "3",
+    "description": "Partial and directional derivatives; maxima and minima; Lagrange multipliers and second derivative test; multiple integrals and applications. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 121, SCIE_V 001, MATH_O 101, MATH_O 103.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Multivariable and Vector Calculus for Mechanical Engineering",
+    "course_code": "MATH_V",
+    "course_id": 254,
+    "credits": "3",
+    "description": "Partial differentiation, extreme values, multiple integration, vector fields, line and surface integrals, the divergence and Stokes' theorems; applications to fluid mechanics: buoyancy, hydrostatic force, pipe flow, drag; applications to thermodynamics: work, entropy, heat transfer; numerical methods. Emphasis on mechanical engineering applications. [3-0-1*]",
+    "prerequisite": "MATH 101 and one of MATH 152, MATH 221, MATH 223",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Ordinary Differential Equations",
+    "course_code": "MATH_V",
+    "course_id": 255,
+    "credits": "3",
+    "description": "Review of linear systems; nonlinear equations and applications; phase plane analysis; Laplace transforms; numerical methods. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH 101, MATH 103, MATH 105, MATH 121, SCIE 001 and one of MATH 152, MATH 221, MATH 223",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Differential Equations",
+    "course_code": "MATH_V",
+    "course_id": 256,
+    "credits": "3",
+    "description": "Linear ordinary differential equations, Laplace transforms, Fourier series and separation of variables for linear partial differential equations. Consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… .",
+    "prerequisite": "One of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 121, SCIE_V 001, MATH_O 101, MATH_O 103 and one of MATH_V 152, MATH_V 221, MATH_V 223, MATH_O 222",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Partial Differential Equations",
+    "course_code": "MATH_V",
+    "course_id": 257,
+    "credits": "3",
+    "description": "Introduction to partial differential equations; Fourier series; the heat, wave and potential equations; boundary-value problems; numerical methods. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH 215, MATH 255, MATH 256, MATH 258.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Differential Equations for Mechanical Engineering",
+    "course_code": "MATH_V",
+    "course_id": 258,
+    "credits": "3",
+    "description": "First-order equations; linear equations; linear systems; Laplace transforms; trajectory analysis of plane nonlinear systems; translational and rotational vibrations; applications to RLC circuit analysis; numerical and graphical methods. Emphasis on mechanical engineering applications. [3-0-1*]",
+    "prerequisite": "MATH 101 and one of MATH 152, MATH 221, MATH 223",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Vector Calculus for Electrical Engineering",
+    "course_code": "MATH_V",
+    "course_id": 264,
+    "credits": "1",
+    "description": "Divergence, gradient, curl, theorems of Gauss and Stokes. Applications to Electrostatics and Magnetostatics. MATH_V 264 content is strongly coupled to BMEG_V 220 and ELEC_V 211 with topics and student evaluations weighted accordingly.",
+    "prerequisite": "One of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253, MATH_V 254",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Complex Variables",
+    "course_code": "MATH_V",
+    "course_id": 300,
+    "credits": "3",
+    "description": "Functions of a complex variable, Cauchy-Riemann equations, elementary functions, Cauchy's theorem and contour integration, Laurent series, poles and residues. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "",
+    "corequisite": "One of MATH 217, MATH 227, MATH 254, MATH 317.",
+    "sections": []
+  },
+  {
+    "title": "Applied Analysis",
+    "course_code": "MATH_V",
+    "course_id": 301,
+    "credits": "3",
+    "description": "Integrals involving multi-valued functions, conformal mapping and applications, analytic continuation, Laplace and Fourier transforms.",
+    "prerequisite": "One of MATH 300, MATH 305",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Probability",
+    "course_code": "MATH_V",
+    "course_id": 302,
+    "credits": "3",
+    "description": "Basic notions of probability, random variables, expectation and conditional expectation, limit theorems. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253, MATH_V 254. Equivalency: STAT_V 302.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Stochastic Processes",
+    "course_code": "MATH_V",
+    "course_id": 303,
+    "credits": "3",
+    "description": "Discrete-time Markov chains, Poisson processes, continuous time Markov chains, renewal theory. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH_V 302, STAT_V 302, STAT_O 203.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Applied Complex Analysis",
+    "course_code": "MATH_V",
+    "course_id": 305,
+    "credits": "3",
+    "description": "Functions of a complex variable, Cauchy-Riemann equations, contour integration, Laurent series, residues, integrals of multi-valued functions, Fourier transforms. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH 200, MATH 217, MATH 226, MATH 253, MATH 254",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Applied Linear Algebra",
+    "course_code": "MATH_V",
+    "course_id": 307,
+    "credits": "3",
+    "description": "Applications of linear algebra to problems in science and engineering; use of computer algebra systems for solving problems in linear algebra.",
+    "prerequisite": "One of MATH_V 152, MATH_V 221, MATH_V 223, MATH_O 222 and one of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253, MATH_V 254, MATH_O 200.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Euclidean Geometry",
+    "course_code": "MATH_V",
+    "course_id": 308,
+    "credits": "3",
+    "description": "Classical plane geometry, solid geometry, spherical trigonometry, polyhedra, linear and affine transformations. Linear algebra proofs are used. It is suggested that MATH 307 be taken concurrently.",
+    "prerequisite": "Either (a) one of MATH 152, MATH 221 and one of MATH 220, MATH 226, CPSC 121; or (b) MATH 223.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Topics in Geometry",
+    "course_code": "MATH_V",
+    "course_id": 309,
+    "credits": "3",
+    "description": "Topics chosen by the instructor. These may include conic sections, projective configuration, convexity, non-Euclidean geometries, fractal geometry, combinatorial problems of points in the plane.",
+    "prerequisite": "Either (a) one of MATH_V 152, MATH_V 221 and one of MATH_V 220, MATH_V 226, CPSC_V 121, MATH_O 220; or (b) MATH_V 223 or MATH_O 222.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Abstract Linear Algebra",
+    "course_code": "MATH_V",
+    "course_id": 310,
+    "credits": "3",
+    "description": "Linear spaces, duality, linear mappings, matrices, determinant and trace, spectral theory, Euclidean structure. Consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH 152, MATH 221 and one of MATH 220, MATH 226, CPSC 121.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Number Theory",
+    "course_code": "MATH_V",
+    "course_id": 312,
+    "credits": "3",
+    "description": "Euclidean algorithm, congruences, Fermat's theorem, applications. Some diophantine equations. Distribution of the prime numbers. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH 220, MATH 223, MATH 226, CPSC 121. and 9 additional credits of mathematics courses.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Topics in Number Theory",
+    "course_code": "MATH_V",
+    "course_id": 313,
+    "credits": "3",
+    "description": "Topics chosen by the instructor. These might include: division algorithms, group theory, continued fractions, primality testing, factoring. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… .",
+    "prerequisite": "MATH_V 312.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Elementary Differential Equations II",
+    "course_code": "MATH_V",
+    "course_id": 316,
+    "credits": "3",
+    "description": "Power series methods (ordinary and regular singular points, Bessel's equation); boundary value problems and separation of variables (Fourier series and other orthogonal series), applications to the vibrating string, heat flow, potentials. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH_V 215, MATH_V 255, MATH_V 256, MATH_V 258, MATH_O 225.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Calculus IV",
+    "course_code": "MATH_V",
+    "course_id": 317,
+    "credits": "3",
+    "description": "Parametrizations, inverse and implicit functions, integrals with respect to length and area; grad, div, and curl, theorems of Green, Gauss, and Stokes. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH 200, MATH 226, MATH 253. One of MATH 152, MATH 221, MATH 223 is recommended.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Probability with Physical Applications",
+    "course_code": "MATH_V",
+    "course_id": 318,
+    "credits": "3",
+    "description": "Random variables, discrete and continuous distributions. Random walk, Markov chains, Monte Carlo methods. Characteristic functions, limit laws. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH 152, MATH 221, MATH 223",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Real Analysis",
+    "course_code": "MATH_V",
+    "course_id": 319,
+    "credits": "3",
+    "description": "Ideas and methods of real analysis and their application. Countability and topology of the reals; convergence, continuity and differentiability of functions; metric spaces. Please consult the Faculty of Science credit exclusion list: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "Either (a) a score of 68% or higher in MATH 220 or (b) a score of 55% or higher in one of MATH 223, MATH 226.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Real Variables I",
+    "course_code": "MATH_V",
+    "course_id": 320,
+    "credits": "3",
+    "description": "The real number system; real Euclidean n-space; open, closed, compact, and connected sets; Bolzano-Weierstrass theorem; sequences and series. Continuity and uniform continuity. Differentiability and mean-value theorems. Please consult the Faculty of Science credit exclusion list: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… .",
+    "prerequisite": "Either (a) a score of 68% or higher in MATH_V 226 or (b) one of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253, MATH_V 254 and a score of 80% or higher in MATH_V 220.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Real Variables II",
+    "course_code": "MATH_V",
+    "course_id": 321,
+    "credits": "3",
+    "description": "The Riemann or Riemann-Stieltjes integrals. Sequences and series of functions, uniform convergence. Approximation of continuous functions by polynomials. Fourier series. Functions from Rm to Rn , inverse and implicit function theorems.",
+    "prerequisite": "MATH 320.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Group Theory",
+    "course_code": "MATH_V",
+    "course_id": 322,
+    "credits": "3",
+    "description": "Groups, cosets, homomorphisms, group actions, p-groups, Sylow theorems, composition series, finitely generated Abelian groups. Please consult the Faculty of Science credit exclusion list: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… .",
+    "prerequisite": "Either (a) a score of 68% or higher in one of MATH_V 223, MATH_V 310 or (b) one of MATH_V 152, MATH_V 221, MATH_V 223 and a score of 80% or higher in MATH_V 220.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Rings and Modules",
+    "course_code": "MATH_V",
+    "course_id": 323,
+    "credits": "3",
+    "description": "Rings, ideals, unique factorization, Euclidean rings, fields, polynomial rings, modules; structure theory of modules over a principal ideal domain.",
+    "prerequisite": "MATH 322.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Abstract Algebra",
+    "course_code": "MATH_V",
+    "course_id": 329,
+    "credits": "3",
+    "description": "Ideas and methods of group theory and their applications. Groups, subgroups, and cosets; homomorphisms, isomorphisms, and associated theorems. Consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "Either (a) one of MATH_V 152, MATH_V 221, and one of MATH_V 220, MATH_V 226, CPSC_V 121, or (b) MATH_V 223",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Mathematics",
+    "course_code": "MATH_V",
+    "course_id": 335,
+    "credits": "4",
+    "description": "Intensive course with required tutorial. Combinatorics, probability, geometry and elementary number theory. Not for credit in the Faculty of Science. Students who obtain credit at UBC for any other mathematics course cannot in the same or later years obtain credit for MATH 335. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Linear Programming",
+    "course_code": "MATH_V",
+    "course_id": 340,
+    "credits": "3",
+    "description": "Linear programming problems, dual problems, the simplex algorithm, solution of primal and dual problems, sensitivity analysis. Additional topics chosen from: Karmarkar's algorithm, non-linear programming, game theory, applications.",
+    "prerequisite": "One of MATH_V 152, MATH_V 221, MATH_V 223, MATH_O 222.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Discrete Mathematics",
+    "course_code": "MATH_V",
+    "course_id": 341,
+    "credits": "3",
+    "description": "Introduction to ideas and methods of discrete mathematics and their application.",
+    "prerequisite": "One of MATH_V 220, MATH_V 223, MATH_V 226, CPSC_V 121, MATH_O 220, MATH_O 222.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Algebra and Coding Theory",
+    "course_code": "MATH_V",
+    "course_id": 342,
+    "credits": "3",
+    "description": "Error-correcting codes via abstract and linear algebra. Emphasis on proofs and computation. Finite fields, Hamming distance and error-correction, upper and lower bounds on the size of a code, linear codes, groups and cosets, encoding and decoding schemes.",
+    "prerequisite": "Either (a) one of MATH_V 152, MATH_V 221 and one of MATH_V 220, MATH_V 226, CPSC_V 121, MATH_O 220; or (b) one of MATH_V 223, MATH_O 222.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Mathematical Game Theory",
+    "course_code": "MATH_V",
+    "course_id": 344,
+    "credits": "3",
+    "description": "Introduction to mathematical game theory and its applications.",
+    "prerequisite": "Either (a) one of MATH_V 152, MATH_V 221 and one of MATH_V 220, MATH_V 226, CPSC_V 121, MATH_O 220; or (b) one of MATH_V 223, MATH_O 222.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Applied Nonlinear Dynamics and Chaos",
+    "course_code": "MATH_V",
+    "course_id": 345,
+    "credits": "3",
+    "description": "Phase plane methods, bifurcation and stability theory, limit-cycle behavior and chaos for nonlinear differential equations with applications to the sciences. Assignments involve the use of computers.",
+    "prerequisite": "A score of 68% or higher in one of MATH 215, MATH 255, MATH 256, MATH 258.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Engineering Analysis",
+    "course_code": "MATH_V",
+    "course_id": 358,
+    "credits": "3",
+    "description": "Fourier series; auto- and cross-correlation; power spectra; discrete Fourier transform; boundary-value problems; numerical methods; partial differential equations; heat, wave, Laplace, Poisson, and wave equations. Applications to mechanical engineering and practical computing applications emphasized. Credit will be granted for only one of MECH 358 or MATH 358. [3-2*-0]",
+    "prerequisite": "All of MECH 224, MECH 225. Equivalency: MECH358",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Mathematical Modelling",
+    "course_code": "MATH_V",
+    "course_id": 360,
+    "credits": "3",
+    "description": "Construction and evaluation of deterministic, stochastic, and data-driven models. Software-assisted simulations and numerical solutions involving ordinary differential equations, stochastic processes, and basic machine learning algorithms. Examples from science, engineering, and economics.",
+    "prerequisite": "One of MATH 200, MATH 217, MATH 226, MATH 253, MATH 254 and one of MATH 210, CPSC 203, CPSC 210 and one of MATH 215, MATH 255, MATH 256, MATH 258.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Mathematical Biology",
+    "course_code": "MATH_V",
+    "course_id": 361,
+    "credits": "3",
+    "description": "Mathematical modelling of basic biological processes in ecology, physiology, neuroscience and genetics. Dynamic behavior of difference equations, differential equations, and partial differential equations, explained with reference to concrete biological examples.",
+    "prerequisite": "One of BIOL 301, MATH 215, MATH 255, MATH 256, MATH 258.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Applied Partial Differential Equations",
+    "course_code": "MATH_V",
+    "course_id": 400,
+    "credits": "3",
+    "description": "Separation of variables, first order equations, Sturm-Liouville theory, integral transform methods.",
+    "prerequisite": "One of MATH 300, MATH 305 and one of MATH 256, MATH 257, MATH 316, MATH 358, MECH 358, PHYS 312.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Green&#039;s Functions and Variational Methods",
+    "course_code": "MATH_V",
+    "course_id": 401,
+    "credits": "3",
+    "description": "Green's functions for partial differential equations. Calculus of variations. Eigenfunction expansions. Rayleigh-Ritz and finite element methods. See Faculty of Science credit exclusion list: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "Either (a) a score of 80% or higher in one of MATH 256, MATH 257, MATH 316, MATH 358, MECH 358, PHYS 312 or (b) MATH 400.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Calculus of Variations",
+    "course_code": "MATH_V",
+    "course_id": 402,
+    "credits": "3",
+    "description": "Classical variational problems; necessary conditions of Euler, Weierstrass, Legendre, and Jacobi; Erdmann corner conditions, transversality, convex Lagrangians, fields of extremals, sufficient conditions for optimality, numerical methods; applications to classical mechanics, engineering and economics. Recommended pre-requisites: a score of 68% or higher in one of MATH 301, MATH 320, or, a score of 80% or higher in MATH 319.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Stabilization and Optimal Control of Dynamical Systems",
+    "course_code": "MATH_V",
+    "course_id": 403,
+    "credits": "3",
+    "description": "Dynamical systems; stability by Liapunov's direct method; controllability and eigenvalue assignment for autonomous linear systems; linear-quadratic regulator, time optimal control, Pontryagin maximum principle, dynamic programming; applications in engineering, economics and resource management. Recommended pre-requisites: MATH 402, and one of (a) a score of 68% or higher in one of MATH 301, MATH 320, or (b) a score of 80% or higher in MATH 319.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Harmonic Analysis I",
+    "course_code": "MATH_V",
+    "course_id": 404,
+    "credits": "3",
+    "description": "Harmonic analysis on Euclidean spaces, with applications to number theory, partial differential equations and geometric measure theory.",
+    "prerequisite": "MATH 300 and a score of 68% or higher in MATH 321",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Numerical Methods for Differential Equations",
+    "course_code": "MATH_V",
+    "course_id": 405,
+    "credits": "3",
+    "description": "Interpolation, numerical integration, numerical solution of ordinary and partial differential equations. Practical computational methods emphasized and basic theory developed through simple models. See Faculty of Science credit exclusion list: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH 256, MATH 257, MATH 316, MATH 358, MECH 358, PHYS 312.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Variational and Approximate Methods in Applied Mathematics",
+    "course_code": "MATH_V",
+    "course_id": 406,
+    "credits": "3",
+    "description": "Variational and Green's function methods for ordinary and partial differential equations, introduction to finite difference, finite element and boundary element methods. See Faculty of Science Credit exclusion list: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of MATH 307, CPSC 302 and either (a) a score of 80% or higher in one of MATH 256, MATH 257, MATH 316, MATH 358, MECH 358, PHYS 312 or (b) MATH 400.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Linear Algebra",
+    "course_code": "MATH_V",
+    "course_id": 412,
+    "credits": "3",
+    "description": "Topics include decompositions of linear operators, multilinear algebra, bilinear forms, metric spaces.",
+    "prerequisite": "A score of 68% or higher in MATH 322 and either (a) a score of 68% or higher in MATH 320 or (b) a score of 80% or higher in MATH 319.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Mathematical Demonstrations",
+    "course_code": "MATH_V",
+    "course_id": 414,
+    "credits": "3",
+    "description": "Students will prepare material illustrating ideas and applications of mathematics and present it to audiences outside the University. Intended for third or fourth year Mathematics students and Math/Science Education students. [2-0-0; 1-0-0] or",
+    "prerequisite": "24 credits in MATH.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Probability",
+    "course_code": "MATH_V",
+    "course_id": 418,
+    "credits": "3",
+    "description": "Probability spaces, random variables, distributions, expectation, conditional probabilities, convergence of random variables, generating and characteristic functions, weak and strong laws of large numbers, central limit theorem.",
+    "prerequisite": "MATH 321. Prerequisite grade requirement: 68% in MATH321.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Stochastic Processes",
+    "course_code": "MATH_V",
+    "course_id": 419,
+    "credits": "3",
+    "description": "Random walks, Markov chains, branching processes, Poisson processes, continuous time Markov chains, martingales, Brownian motion.",
+    "prerequisite": "MATH_V 418.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Real Analysis I",
+    "course_code": "MATH_V",
+    "course_id": 420,
+    "credits": "3",
+    "description": "Sigma-algebras, Lebesgue measure, Borel measures, measurable functions, integration, convergence theorems, Lp spaces, Holder and Minkowski inequalities, Lebesgue and/or Radon-Nikodym differentiation.",
+    "prerequisite": "MATH 321. Prerequisite grade requirement: 68% in MATH321.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Real Analysis II",
+    "course_code": "MATH_V",
+    "course_id": 421,
+    "credits": "3",
+    "description": "Banach spaces, linear operators, bounded and compact operators, strong, weak, and weak* topology. Hahn-Banach, open mapping, and closed graph theorems. Hilbert spaces, symmetric and self-adjoint operators, spectral theory for bounded operators.",
+    "prerequisite": "MATH_V 420.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Fields and Galois Theory",
+    "course_code": "MATH_V",
+    "course_id": 422,
+    "credits": "3",
+    "description": "Field extensions, the Galois correspondence, finite fields, insolvability in radicals, ruler and compass constructions, additional topics chosen by instructor.",
+    "prerequisite": "MATH 323.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Commutative Algebra",
+    "course_code": "MATH_V",
+    "course_id": 423,
+    "credits": "3",
+    "description": "Commutative algebra; homological algebra or representation theory of finite groups.",
+    "prerequisite": "MATH 323 and a score of 68% or higher in one of MATH 412, MATH 422.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Classical Differential Geometry",
+    "course_code": "MATH_V",
+    "course_id": 424,
+    "credits": "3",
+    "description": "The differential geometry of curves and surfaces in three-dimensional Euclidean space. Mean curvature and Gaussian curvature. Geodesics. Gauss's Theorema Egregium.",
+    "prerequisite": "Either (a) a score of 68% or higher in MATH 223 or (b) a score of 80% or higher in one of MATH 152, MATH 221; and either (a) a score of 68% or higher in MATH 227 or (b) a score of 80% or higher in one of MATH 217, MATH 254, MATH 264, MATH 317.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Modern Differential Geometry",
+    "course_code": "MATH_V",
+    "course_id": 425,
+    "credits": "3",
+    "description": "Smooth manifolds, smooth maps, immersions and submersions, vector fields, vector bundles, tangent and cotangent bundles, tensors and differential forms, orientation of manifolds, integration of forms, and selected topics.",
+    "prerequisite": "One of MATH 221, MATH 223 and one of MATH 217, MATH 227, MATH 254, MATH 264, MATH 317 and one of MATH 319, MATH 320.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Topology",
+    "course_code": "MATH_V",
+    "course_id": 426,
+    "credits": "3",
+    "description": "General topology, combinatorial topology, fundamental group and covering spaces, topics chosen by the instructor.",
+    "prerequisite": "All of MATH 321, MATH 322. Prerequisite grade requirement: 68% in MATH322,MATH321.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Topics in Topology",
+    "course_code": "MATH_V",
+    "course_id": 427,
+    "credits": "3",
+    "description": "Homology theory, homotopy theory, manifolds, and other topics chosen by the instructor.",
+    "prerequisite": "MATH_V 426.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Mathematical Classical Mechanics I",
+    "course_code": "MATH_V",
+    "course_id": 428,
+    "credits": "3",
+    "description": "Newton's equation, conservation laws, the Euler-Lagrange equation; Hamilton's principle of least action, Hamilton's equations, Lagrangian mechanics on manifolds.",
+    "prerequisite": "One of MATH 215, MATH 255, MATH 256, MATH 258 and one of PHYS 216, PHYS 306, ENPH 270",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Special Topics in Analysis",
+    "course_code": "MATH_V",
+    "course_id": 430,
+    "credits": "2-6",
+    "description": "The student should consult the Mathematics Department for the particular topics offered in a given year.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Special Topics in Algebra",
+    "course_code": "MATH_V",
+    "course_id": 432,
+    "credits": "2-6",
+    "description": "The student should consult the Mathematics Department for the particular topics offered in a given year.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Number Theory",
+    "course_code": "MATH_V",
+    "course_id": 437,
+    "credits": "3",
+    "description": "Divisibility, congruences, Diophantine equations, arithmetic functions, quadratic reciprocity, advanced topics. Please consult the Faculty of Science Credit Exclusion List: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… .",
+    "prerequisite": "",
+    "corequisite": "One of MATH 320 (waived for students with a score of 80% or higher in MATH 319), MATH 322.",
+    "sections": []
+  },
+  {
+    "title": "Complex Analysis",
+    "course_code": "MATH_V",
+    "course_id": 440,
+    "credits": "3",
+    "description": "The residue theorem, the argument principle, conformal mapping, the maximum modulus principle, harmonic functions, representation of functions by integrals, series, and products. Other topics at the discretion of the instructor.",
+    "prerequisite": "MATH 300 and either (a) a score of 68% or higher in MATH 320 or (b) a score of 80% or higher in MATH 319 and permission of the Department Head in Mathematics.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Mathematical Modelling: Discrete Optimization Problems",
+    "course_code": "MATH_V",
+    "course_id": 441,
+    "credits": "3",
+    "description": "Formulation of real-world optimization problems using techniques such as linear programming, network flows, integer programming, dynamic programming. Solution by appropriate software.",
+    "prerequisite": "MATH_V 340.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Graphs and Networks",
+    "course_code": "MATH_V",
+    "course_id": 442,
+    "credits": "3",
+    "description": "Graph theory, emphasizing trees, tree growing algorithms, and proof techniques. Other topics chosen from shortest paths, maximum flows, minimum cost flows, matchings, and graph colouring.",
+    "prerequisite": "3rd year standing and one of MATH 220, MATH 223, MATH 226 or CPSC 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Graph Theory",
+    "course_code": "MATH_V",
+    "course_id": 443,
+    "credits": "3",
+    "description": "Introductory course in mostly non-algorithmic topics including: planarity and Kuratowski's theorem, graph colouring, graph minors, random graphs, cycles in graphs, Ramsey theory, extremal graph theory. Proofs emphasized. Intended for Honours students.",
+    "prerequisite": "A score of 68% or higher in one of MATH 220, MATH 223, MATH 226, CPSC 121. And 6 credits of MATH numbered 300 or above.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Mathematical Research and Writing",
+    "course_code": "MATH_V",
+    "course_id": 444,
+    "credits": "3",
+    "description": "Current research topics in pure and applied mathematics are explored at the undergraduate level. Technical communication and research skills are developed.",
+    "prerequisite": "One of MATH_V 220, MATH_V 223, MATH_V 226, and 6 credits of MATH_V courses numbered 300 or higher.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Topics in the History of Mathematics I",
+    "course_code": "MATH_V",
+    "course_id": 446,
+    "credits": "3",
+    "description": "Historical development of concepts and techniques in areas chosen from Geometry, Number Theory, Algebra, Calculus, Probability, Analysis. The focus is on historically significant writings of important contributors and on famous problems of Mathematics.",
+    "prerequisite": "21 credits of MATH.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Directed Studies in Mathematics",
+    "course_code": "MATH_V",
+    "course_id": 448,
+    "credits": "1-6",
+    "description": "Introduction to the methods of mathematical research through an exploration of a mathematical topic under the supervision of a faculty member. Written report required.",
+    "prerequisite": "Third- or fourth-year class standing and permission of the Department Head.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Honours Reading",
+    "course_code": "MATH_V",
+    "course_id": 449,
+    "credits": "1-6",
+    "description": "Independent reading and research on a mathematical topic under the supervision of a faculty member. Intended for Honours students. Written report required.",
+    "prerequisite": "Permission of the Department Head.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Asymptotic and Perturbation Methods",
+    "course_code": "MATH_V",
+    "course_id": 450,
+    "credits": "3",
+    "description": "Asymptotic expansions. Asymptotic evaluation of integrals; WKBJ methods. Regular and singular expansions. Boundary layer theory; matched asymptotic expansions. Multiple scale techniques.",
+    "prerequisite": "MATH 400.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Projects in Mathematical Modelling",
+    "course_code": "MATH_V",
+    "course_id": 461,
+    "credits": "3",
+    "description": "Computational methods for mathematical modelling. Numerical methods for partial differential equations, stochastic processes, and data-driven models. Includes student-directed projects on current research and applications.",
+    "prerequisite": "Either (a) MATH 360 or (b) one of MATH 210, CPSC 203, CPSC 210 and one of MATH 345, MATH 361.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Projects in Mathematical Biology",
+    "course_code": "MATH_V",
+    "course_id": 462,
+    "credits": "3",
+    "description": "Development and analysis of mathematical models for complex systems in ecology, evolution, cell biology, neurophysiology, and other biological and medical disciplines.",
+    "prerequisite": "One of MATH 361, MATH 345.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Foundations of Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 100,
+    "credits": "3",
+    "description": "Atomic and molecular properties, chemical reactions, bonding, nomenclature, kinetics, equilibrium processes, acids and bases, oxidation and reduction. Intended for students who do not receive a satisfactory score on the UBC Chemistry Basic Skills Test, and need to establish a foundation of chemistry skills before proceeding to other first year chemistry courses. .",
+    "prerequisite": "Not open to students with credit for Chemistry 12. Permission of the department head. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Structure, Bonding and Equilibrium in Chemistry (Lecture)",
+    "course_code": "CHEM_V",
+    "course_id": 110,
+    "credits": "3",
+    "description": "Fundamentals of bonding theories, structural chemistry and equilibrium with applications relevant to modern society. .",
+    "prerequisite": "Not open to students with credit for Chemistry 12. A satisfactory score on the UBC Chemistry Basic Skills Test. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Structure, Bonding, and Equilibrium in Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 111,
+    "credits": "4",
+    "description": "Fundamentals of bonding theories, structural chemistry and equilibrium with applications relevant to modern society.",
+    "prerequisite": "Not open to students with credit for CHEM 12. A satisfactory score on the UBC Chemistry Basic Skills Test.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introductory Chemical Laboratory I",
+    "course_code": "CHEM_V",
+    "course_id": 115,
+    "credits": "1",
+    "description": "An introduction to the principles and techniques of the chemistry laboratory.",
+    "prerequisite": "One of CHEM 110, CHEM 120.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Structure and Bonding in Chemistry (Lecture)",
+    "course_code": "CHEM_V",
+    "course_id": 120,
+    "credits": "3",
+    "description": "Fundamentals of bonding theories, structural chemistry, with applications relevant to modern society. .",
+    "prerequisite": "One of CHEM 12, CHEM_V 100. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Structure and Bonding in Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 121,
+    "credits": "4",
+    "description": "Fundamentals of bonding theories and structural chemistry, with applications relevant to modern society.",
+    "prerequisite": "One of CHEM_V 12, CHEM_V 100. Equivalency: CHEM_V 141",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Thermodynamics, Kinetics and Organic Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 123,
+    "credits": "4",
+    "description": "Fundamentals of chemical reactivity: thermodynamics; kinetics; organic chemistry, including stereochemistry; applications relevant to modern society.",
+    "prerequisite": "One of CHEM 111, CHEM 121, CHEM 141.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Thermodynamics, Kinetics and Organic Chemistry (Lecture)",
+    "course_code": "CHEM_V",
+    "course_id": 130,
+    "credits": "3",
+    "description": "Fundamentals of chemical reactivity: thermodynamics; kinetics; organic chemistry, including stereochemistry; applications relevant to modern society.",
+    "prerequisite": "One of CHEM 110, CHEM 111, CHEM 120, CHEM 121, CHEM 141.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introductory Chemical Laboratory II",
+    "course_code": "CHEM_V",
+    "course_id": 135,
+    "credits": "1",
+    "description": "An introduction to the principles and techniques of the chemistry laboratory.",
+    "prerequisite": "One of CHEM 111, CHEM 115, CHEM 121, CHEM 141.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Chemical Bonding, Molecular Structure and Properties for Lab Sciences",
+    "course_code": "CHEM_V",
+    "course_id": 141,
+    "credits": "4",
+    "description": "Bonding theories, their predictions, experimental tests, and consequences regarding chemical structure and observable properties. Applications relevant to modern society are emphasized. For students interested in lab-focused sciences such as Chemistry, Physics, Biochemistry, Microbiology and related disciplines. Restricted to students in the Faculty of Science.",
+    "prerequisite": "One of CHEM 12, CHEM 100. Equivalency: CHEM121",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Chemistry for Engineering",
+    "course_code": "CHEM_V",
+    "course_id": 154,
+    "credits": "3",
+    "description": "Chemical bonding, properties of matter. Chemical thermodynamics with applications to phase equilibria, aqueous equilibria and electrochemistry. Processes at surfaces. [3-3*-0]",
+    "prerequisite": "CHEM 12.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Organic Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 203,
+    "credits": "4",
+    "description": "Structure, bonding and physical properties of aliphatic and aromatic compounds; mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-heteroatom bond formation; functional group interconversion and oxidation/reduction reactions. Only open to students in Chemistry or Biochemistry specializations. Credit will be granted for only one of CHEM 203 or CHEM 223, CHEM 225 or CHEM 233, 235.",
+    "prerequisite": "Either (a) CHEM 123 or (b) all of CHEM 130, CHEM 135 or (c) SCIE 001.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Physical Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 205,
+    "credits": "3",
+    "description": "Chemical kinetics and thermodynamics and spectroscopy useful in biological, medical, agricultural, earth, and related sciences.",
+    "prerequisite": "Either (a) SCIE_V 001 or (b) one of MATH_V 100, MATH_V 102, MATH_V 104, MATH_V 110, MATH_V 120, MATH_V 180, MATH_V 184, MATH_O 100 and one of CHEM_V 130, CHEM_V 123, CHEM_V 154.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Coordination Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 208,
+    "credits": "3",
+    "description": "Fundamental concepts and principles governing bonding and reactivity of coordination complexes: ligand field theory; symmetry and point groups; frontier molecular orbital theory. .",
+    "prerequisite": "One of CHEM_V 130, CHEM_V 123, SCIE_V 001. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Chemical Analysis (Lecture)",
+    "course_code": "CHEM_V",
+    "course_id": 210,
+    "credits": "3",
+    "description": "Quantitative chemical analysis; chemical and physical principles of spectrophotometry, potentiometry, and chromatography.",
+    "prerequisite": "One of CHEM_V 123, CHEM_V 130, SCIE_V 001. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Chemical Analysis",
+    "course_code": "CHEM_V",
+    "course_id": 211,
+    "credits": "4",
+    "description": "Quantitative chemical analysis; chemical and physical principles of spectrophotometry, potentiometry, and chromatography. .",
+    "prerequisite": "Either (a) CHEM_V 123 or (b) all of CHEM_V 130, CHEM_V 135 or (c) SCIE_V 001. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Organic Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 213,
+    "credits": "3",
+    "description": "Spectroscopy of organic compounds. Mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-carbon bond formation; functional group interconversion. Preference will be given to students in Chemistry or Biochemistry specializations.",
+    "prerequisite": "Either (a) one of CHEM_V 203, CHEM_V 223, CHEM_O 203 or (b) a score of 76% or higher in CHEM_V 233 or CHEM_O 213.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introductory Analytical Chemical Laboratory",
+    "course_code": "CHEM_V",
+    "course_id": 215,
+    "credits": "1",
+    "description": "An introduction to the principles and techniques in the analytical chemistry laboratory.",
+    "prerequisite": "CHEM 210 and one of CHEM 123, CHEM 135.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Fundamentals of Reactivity in Inorganic Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 218,
+    "credits": "3",
+    "description": "Chemical reactivity of inorganic systems: oxidation/reduction chemistry; multiply-bonded systems; main group chemistry. .",
+    "prerequisite": "CHEM_V 208. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Organic Chemistry (Lecture)",
+    "course_code": "CHEM_V",
+    "course_id": 223,
+    "credits": "3",
+    "description": "Structure, bonding and physical properties of aliphatic and aromatic compounds; mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-heteroatom bond formation; functional group interconversion and oxidation/reduction reactions. Only open to students in Chemistry or Biochemistry specializations. Students should consult the Credit Exclusion List for credit exclusions relating to second-year organic chemistry courses.",
+    "prerequisite": "One of CHEM 123, CHEM 130, SCIE 001.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introductory Synthetic Chemical Laboratory",
+    "course_code": "CHEM_V",
+    "course_id": 225,
+    "credits": "1",
+    "description": "An introduction to the principles and techniques in the synthetic organic and inorganic chemistry laboratory.",
+    "prerequisite": "One of CHEM 123, CHEM 135.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Organic Chemistry for the Biological Sciences",
+    "course_code": "CHEM_V",
+    "course_id": 233,
+    "credits": "3",
+    "description": "Reactions and properties of carbonyl compounds, carbohydrates, amino acids, nucleic acids. Credit will be granted for only one of CHEM 233 or CHEM 203 or CHEM 223.",
+    "prerequisite": "One of CHEM 123, CHEM 130, SCIE 001.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Organic Chemistry Laboratory",
+    "course_code": "CHEM_V",
+    "course_id": 235,
+    "credits": "1",
+    "description": "Techniques of organic chemistry. To be taken in conjunction with, or in the term following, CHEM_V 233. Credit will be granted for only one of CHEM_V 235 or CHEM_V 203.",
+    "prerequisite": "One of CHEM_V 123, CHEM_V 135, SCIE_V 001",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Intermediate Synthetic Chemistry Laboratory",
+    "course_code": "CHEM_V",
+    "course_id": 245,
+    "credits": "1",
+    "description": "Techniques in synthetic organic and inorganic chemistry. Open only to students in Chemistry or Biochemistry specializations. .",
+    "prerequisite": "Either (a) CHEM_V 203 or (b) all of CHEM_V 223, CHEM_V 225 or (c) all of CHEM_V 233, CHEM_V 235",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Inorganic Chemistry for Engineers",
+    "course_code": "CHEM_V",
+    "course_id": 250,
+    "credits": "3",
+    "description": "Chemistry of selected groups of inorganic compounds, considered in relation to industrial processes.",
+    "prerequisite": "One of CHEM 123, CHEM 130, CHEM 154, SCIE 001.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Physical Chemistry for Engineers",
+    "course_code": "CHEM_V",
+    "course_id": 251,
+    "credits": "3",
+    "description": "States of matter, properties of gases, phase diagrams. Elementary chemical thermodynamics and kinetics. Reaction equilibria.",
+    "prerequisite": "One of CHEM 123, CHEM 130, CHEM 154, SCIE 001.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Organic Chemistry for Engineers",
+    "course_code": "CHEM_V",
+    "course_id": 260,
+    "credits": "3",
+    "description": "A description of the properties and reactions of organic compounds.",
+    "prerequisite": "One of CHEM 123, CHEM 130, CHEM 154, SCIE 001.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Communicating Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 300,
+    "credits": "3",
+    "description": "Effective argumentation and communication skills in chemistry. Only open to students in a Chemistry specialization. .",
+    "prerequisite": "Third year standing. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Aqueous Environmental Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 301,
+    "credits": "3",
+    "description": "Properties and composition of natural waters, including gas and solid equilibria, pH and acidification, redox chemistry, complexation, corrosion, ion exchange, colloids and microbial transformations.",
+    "prerequisite": "One of CHEM 123, CHEM 130, CHBE 220. and Third year standing.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Atmospheric Environmental Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 302,
+    "credits": "3",
+    "description": "Introduction to structure, composition and chemical processes occurring in Earth's atmosphere, including interactions with solar radiation, stratospheric ozone layer, photochemical smog and acid rain.",
+    "prerequisite": "One of CHEM 123, CHEM 130, CHBE 220. and Third year standing.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Fundamentals of Thermodynamics and Statistical Mechanics",
+    "course_code": "CHEM_V",
+    "course_id": 304,
+    "credits": "3",
+    "description": "Principles of chemical thermodynamics; introduction to statistical mechanics; phase equilibria; electrochemistry.",
+    "prerequisite": "One of CHEM_V 123, CHEM_V 130 and one of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Biophysical Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 305,
+    "credits": "3",
+    "description": "Diffusion and transport phenomena; interaction of radiation and matter. Methods for determining molecular weight, size, and shape of molecules in solution.",
+    "prerequisite": "One of MATH 200, MATH 217, MATH 226, MATH 253 and either (a) a score of 76% or higher in CHEM 205 or (b) CHEM 304 or (c) PHYS 203.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Instrumental Analytical Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 311,
+    "credits": "3",
+    "description": "Theory, design, and application of instrumental methods of chemical analysis including spectroscopy, mass spectrometry, electroanalysis, and chemical separations.",
+    "prerequisite": "One of CHEM_V 210, CHEM_V 211.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Quantum Mechanics and Spectroscopy",
+    "course_code": "CHEM_V",
+    "course_id": 312,
+    "credits": "3",
+    "description": "Principles of quantum mechanics; atomic wavefunctions; angular momentum; spin; atomic term symbols.",
+    "prerequisite": "One of CHEM_V 123, SCIE_V 001 and one of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Organic Chemistry for the Life Sciences",
+    "course_code": "CHEM_V",
+    "course_id": 313,
+    "credits": "3",
+    "description": "Chemistry of organic substances having particular relevance to the life sciences.",
+    "prerequisite": "CHEM 213.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Chemistry Integrated Laboratory I",
+    "course_code": "CHEM_V",
+    "course_id": 315,
+    "credits": "1",
+    "description": "Principles and techniques of modern chemistry applied by integrating experiments chosen from organic, inorganic, physical, and analytical chemistry.",
+    "prerequisite": "One of CHEM 211, CHEM 215 and all of CHEM 213, CHEM 245.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Principles of Catalysis",
+    "course_code": "CHEM_V",
+    "course_id": 318,
+    "credits": "3",
+    "description": "Fundamental aspects of chemical catalysis: kinetic models; catalytic processes in biochemistry and industry; emerging topics in catalysis. .",
+    "prerequisite": "One of CHEM_V 218, CHEM_V 250. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Practical Skills for Chemical Research",
+    "course_code": "CHEM_V",
+    "course_id": 319,
+    "credits": "1",
+    "description": "The nature of scientific research; practical skills for chemical research; communicating science. Restricted to Honours students with third year standing and, with permission of the department Head, to Major students with satisfactory third year standing. .",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Integrated Chemistry Laboratory I",
+    "course_code": "CHEM_V",
+    "course_id": 325,
+    "credits": "2",
+    "description": "Principles and techniques of modern chemistry applied by integrating experiments chosen from organic, inorganic, physical, and analytical chemistry. Open only to students in Chemistry specializations.",
+    "prerequisite": "One of CHEM 211, CHEM 215 and all of CHEM 208, CHEM 213, CHEM 245.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Materials Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 327,
+    "credits": "3",
+    "description": "Basic principles of materials chemistry: classification; nomenclature; synthetic methods; characterization. .",
+    "prerequisite": "One of CHEM_V 208, CHEM_V 250 and one of CHEM_V 203, CHEM_V 223, CHEM_V 233, CHEM_V 260. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Research Ethics and Data Analysis Skills",
+    "course_code": "CHEM_V",
+    "course_id": 329,
+    "credits": "1",
+    "description": "Research ethics; data analysis skills for chemical research. Restricted to Honours students with third year standing and, with permission of the department Head, to Major students with satisfactory third year standing. .",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Organic Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 330,
+    "credits": "3",
+    "description": "Application of carbonyl group chemistry, cyclization reactions, conformational analysis and rearrangement reactions in organic synthesis.",
+    "prerequisite": "CHEM 213.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Chemistry Integrated Laboratory II",
+    "course_code": "CHEM_V",
+    "course_id": 335,
+    "credits": "1",
+    "description": "Further development of principles and techniques of modern chemistry applied by integrating experiments chosen from organic, inorganic, physical, and analytical chemistry.",
+    "prerequisite": "CHEM 315.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Global Challenges: A Chemical Perspective",
+    "course_code": "CHEM_V",
+    "course_id": 341,
+    "credits": "3",
+    "description": "Importance of chemistry in society. Detailed case studies drawn from modern chemistry: human health, energy, commodity chemicals, materials, green chemistry, agriculture.",
+    "prerequisite": "one of CHEM_V 203, CHEM_V 211, CHEM_V 223, CHEM_V 233, CHEM_V 260.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Integrated Chemistry Laboratory II",
+    "course_code": "CHEM_V",
+    "course_id": 345,
+    "credits": "2",
+    "description": "Further development of principles and techniques of modern chemistry applied by integrating experiments chosen from organic, inorganic, physical, and analytical chemistry. Open only to students in Chemistry Major or Honours specializations.",
+    "prerequisite": "CHEM_V 325.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Chemistry Integrated Laboratory",
+    "course_code": "CHEM_V",
+    "course_id": 355,
+    "credits": "1",
+    "description": "Principles and techniques of modern chemistry for students in Combined Major in Science or a Minor in Chemistry integrating experiments from organic, inorganic, physical and analytical chemistry.",
+    "prerequisite": "One of CHEM 203, CHEM 211, CHEM 235.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Principles of Spectroscopy",
+    "course_code": "CHEM_V",
+    "course_id": 401,
+    "credits": "3",
+    "description": "Rotational, vibrational, electronic and magnetic resonance spectroscopy and associated techniques; group theory.",
+    "prerequisite": "One of MATH_V 111, MATH_V 131, MATH_V 152, MATH_V 221, MATH_V 223 and one of CHEM_V 312, PHYS_V 304.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Diffraction Methods",
+    "course_code": "CHEM_V",
+    "course_id": 402,
+    "credits": "3",
+    "description": "Crystal structures; point and space groups; X-ray diffraction, neutron diffraction, electron diffraction of gases and surfaces. Credit will be granted for only one of CHEM 402 or CHEM 514.",
+    "prerequisite": "CHEM 208.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Surface Chemistry and Surface Analysis",
+    "course_code": "CHEM_V",
+    "course_id": 403,
+    "credits": "3",
+    "description": "Surfaces and phenomena occurring at surfaces and interfaces: adsorption, thermodynamic treatments, technological applications. Methods for characterization and modification of surfaces. Dynamic electrochemistry and its application to understanding fuel cells.",
+    "prerequisite": "CHEM_V 304 and one of MATH_V 200, MATH_V 217, MATH_V 226, MATH_V 253.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Computational Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 404,
+    "credits": "3",
+    "description": "Application of numerical techniques to study chemical systems; molecular simulation. Prior computer programming experience is not required. .",
+    "prerequisite": "Either (a) SCIE_V 001 or (b) one of CHEM_V 123, CHEM_V 130, CHEM_V 154 and one of PHYS_V 106, PHYS_V 107, PHYS_V 108, PHYS_V 117, PHYS_V 118, PHYS_V 170 and one of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 121 and Third-year standing. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Biophysical Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 405,
+    "credits": "3",
+    "description": "Interactions of macromolecules in solution: ligand, antibody and ion binding to macromolecules; thermodynamics of polymer solutions; excluded volume effects; phase separation; partition in two phase polymer solutions.",
+    "prerequisite": "One of CHEM 304, CHEM 305, PHYS 203.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Polymer Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 406,
+    "credits": "3",
+    "description": "Structure and availability of monomers; Propagation mechanisms; synthesis of polymers with predetermined properties; measurement and interpretation of physical properties of polymers.",
+    "prerequisite": "One of CHEM 213, CHEM 260 and one of CHEM 205, CHEM 304, CHBE 220.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Statistical Mechanics in Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 407,
+    "credits": "3",
+    "description": "Introductory concepts of statistical mechanics and statistical thermodynamics. Applications to chemistry with emphasis on understanding chemical reactivity. Credit will be granted for only one of CHEM 503/CHEM 407 or PHYS 455.",
+    "prerequisite": "One of CHEM 304, PHYS 203.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Chemical Dynamics",
+    "course_code": "CHEM_V",
+    "course_id": 408,
+    "credits": "3",
+    "description": "Macroscopic and microscopic kinetics; photochemistry; theory of reaction rates; reaction cross sections, energy distributions, experimental methods. Credit will be granted for only one of CHEM 408 or CHEM 508.",
+    "prerequisite": "One of CHEM 304, PHYS 203 and one of CHEM 312, PHYS 304.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Astrochemistry",
+    "course_code": "CHEM_V",
+    "course_id": 409,
+    "credits": "3",
+    "description": "Application of physical chemistry concepts and principles to the study of molecules in interstellar media and celestial bodies. Credit will be granted for only one of CHEM 409 or CHEM 509.",
+    "prerequisite": "One of CHEM 312, PHYS 304. Students with CHEM 205 with a minimum grade of 76% may be admitted with permission of the instructor.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Properties of Materials",
+    "course_code": "CHEM_V",
+    "course_id": 410,
+    "credits": "3",
+    "description": "Electromagnetic, optical, thermal and mechanical properties, and chemical reactivity of solids; electrons in periodic systems: bands, zones; excitations: excitons, phonons, plasmons, polaritons; crystalline order and disorder; ionic conductivity. Credit will be granted for only one of CHEM 410 or CHEM 502.",
+    "prerequisite": "One of CHEM 304, PHYS 203 and one of CHEM 312, PHYS 304.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Synthesis and Chemistry of Natural Products",
+    "course_code": "CHEM_V",
+    "course_id": 411,
+    "credits": "3",
+    "description": "Methods and tactics for the synthesis of biologically active natural products and analogs, particularly alkaloids, polyketides, steroids and terpenes. Credit will be granted for only one of CHEM 411 or CHEM 566.",
+    "prerequisite": "CHEM 460.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Electronic Structure of Atoms and Molecules",
+    "course_code": "CHEM_V",
+    "course_id": 412,
+    "credits": "3",
+    "description": "Introduction to variational methods; many-electron systems; semi-empirical methods; perturbation theory; computational methods.",
+    "prerequisite": "One of CHEM_V 312, PHYS_V 304 and one of MATH_V 111, MATH_V 131, MATH_V 152, MATH_V 221, MATH_V 223.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Bioorganic Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 413,
+    "credits": "3",
+    "description": "Enzyme catalysis; mechanistic enzymology; chemistry of cofactors; biosynthetic transformations; natural product biosynthesis; topics in chemical biology. Credit will be granted for only one of CHEM_V 413, CHEM_V 569, or BIOC_V 403.",
+    "prerequisite": "One of CHEM_V 313, CHEM_V 330.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Coordination Chemistry of the Transition Elements",
+    "course_code": "CHEM_V",
+    "course_id": 414,
+    "credits": "3",
+    "description": "Molecular and electronic structures and reactivities of coordination compounds of the transition elements. Credit will be granted for only one of CHEM 414 or CHEM 525.",
+    "prerequisite": "CHEM 218.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Physical and Theoretical Organic Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 416,
+    "credits": "3",
+    "description": "Energetics and catalysis in organic reactions. Pericyclic reactions. Substituent effects. Linear free energy relationships. Credit will be granted for only one of CHEM_V 416 or CHEM_V 563.",
+    "prerequisite": "One of CHEM_V 313, CHEM_V 330.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Nuclear Chemistry and Radiochemistry",
+    "course_code": "CHEM_V",
+    "course_id": 417,
+    "credits": "3",
+    "description": "Basic treatment of the nucleus, with analogy to concepts in chemistry. Nuclear stabilities and associated radioactive decay processes. Nuclear structure. Applications of radioisotopes in chemistry. The interaction of radiation with matter.",
+    "prerequisite": "One of CHEM 123, CHEM 130. and Third year standing. CHEM 312 is recommended.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Organometallic Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 418,
+    "credits": "3",
+    "description": "The chemistry of compounds containing organic groups directly bonded to metals and metalloids. Emphasis will be placed on the structure and bonding of the compounds and their use in synthetic chemistry. Credit will be granted for only one of CHEM 418 or CHEM 524.",
+    "prerequisite": "CHEM 318.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Establishing a Career in Chemical Research",
+    "course_code": "CHEM_V",
+    "course_id": 419,
+    "credits": "1",
+    "description": "Current research and career perspectives in chemistry. Restricted to Honours students with fourth year standing and, with permission of the department Head, to Major students with satisfactory fourth year standing. .",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Applications of Materials Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 427,
+    "credits": "3",
+    "description": "Contemporary materials chemistry, including design and synthesis of materials for energy, electronics, and health applications.",
+    "prerequisite": "CHEM 327.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Developments in Contemporary Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 430,
+    "credits": "3-6",
+    "description": "A review of modern developments in general chemistry for teachers of Secondary School chemistry (Not for credit in the Faculty of Science). Course is offered periodically in extra-sessional sessions.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Principles of Chemical Separation",
+    "course_code": "CHEM_V",
+    "course_id": 434,
+    "credits": "3",
+    "description": "Unified theory of separation science; liquid and gas chromatography; capillary electrophoresis; electrochemical and spectroscopic detection; separation methods coupled with mass spectrometry and tandem mass spectrometry; biochemical applications. Credit will be granted for only one of CHEM 434 or CHEM 534.",
+    "prerequisite": "CHEM 311.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Bio-Inorganic Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 435,
+    "credits": "3",
+    "description": "A discussion of the involvement of inorganic chemistry in biological systems. Chemistry of cations, metalloenzymes, and simpler model systems. Reactions of coordinated ligands, chemistry of sulfur and phosphorus. Credit will be granted for only one of CHEM 435 or CHEM 526.",
+    "prerequisite": "All of CHEM 218, CHEM 304.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Projects in Experimental Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 445,
+    "credits": "3-6",
+    "description": "Principles of experimental design, practice and problem solving in chemistry, including the opportunity to pursue projects in a research setting. Students cannot take both CHEM_V 445 and CHEM_V 449.",
+    "prerequisite": "One of CHEM_V 345, CHEM_V 335. Students satisfying the prerequisite requirement using CHEM_V 335 must have 4th-year class standing in a Chemistry Combined Major specialization.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Directed Studies in Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 448,
+    "credits": "3-6",
+    "description": "Students will undertake an investigation of a specific topic as agreed upon by the student and the faculty supervisor. Open to third- and fourth-year chemistry students.",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Seminar and Thesis",
+    "course_code": "CHEM_V",
+    "course_id": 449,
+    "credits": "6",
+    "description": "Original research work under the direction of a faculty member. Weekly seminar. Required of all Honours students. Open to Majors students with a satisfactory standing and permission of the department head. Students cannot take both CHEM_V 445 and CHEM_V 449.",
+    "prerequisite": "Students will have completed their Year 3 laboratory requirements as outlined in their specialization.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Organic Synthesis: A Mechanistic Approach",
+    "course_code": "CHEM_V",
+    "course_id": 460,
+    "credits": "3",
+    "description": "Presentation, mechanistic discussion and analysis of modern synthetic methods using principles of physical organic chemistry. Credit will be granted for only one of CHEM 460 or CHEM 560.",
+    "prerequisite": "CHEM 330.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Synthetic Chemical Biology",
+    "course_code": "CHEM_V",
+    "course_id": 461,
+    "credits": "3",
+    "description": "Synthetic, mechanistic, and biochemical approaches to chemical biology, including the design of drugs, probes, and catalysts. Credit will be granted for only one of CHEM_V 461 or CHEM_V 561. .",
+    "prerequisite": "One of CHEM_V 313, CHEM_V 330. This course is not eligible for Credit/D/Fail grading.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Structure Determination and Reaction Analysis",
+    "course_code": "CHEM_V",
+    "course_id": 473,
+    "credits": "3",
+    "description": "Application of mass spectrometry and modern spectroscopic techniques, including multidimensional NMR spectroscopy, to reaction analysis and detailed characterization of complex organic and organometallic molecular structures.",
+    "prerequisite": "CHEM 245 and one of CHEM 313, CHEM 318, CHEM 330.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Topics in Chemistry",
+    "course_code": "CHEM_V",
+    "course_id": 488,
+    "credits": "3-6",
+    "description": "Selected topics in a specific area of Chemistry. May be taken more than once for credit with permission of the Department.",
+    "prerequisite": "Third-year standing in a Chemistry specialization and permission of the Department.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Elementary Statistics for Applications",
+    "course_code": "STAT_V",
+    "course_id": 200,
+    "credits": "3",
+    "description": "Classical, nonparametric, and robust inferences about means, variances, and analysis of variance, using computers. Emphasis on problem formulation, assumptions, and interpretation. See the Faculty of Science Credit Exclusion Lists: https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult…",
+    "prerequisite": "One of any course on the MATH_V 100 credit exclusion list [ https://vancouver.calendar.ubc.ca/faculties-colleges-and-schools/facult… ], MATH_V 190, SCIE_V 001, MATH_O 100.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Statistical Inference for Data Science",
+    "course_code": "STAT_V",
+    "course_id": 201,
+    "credits": "3",
+    "description": "Classical and simulation-based techniques for estimation and hypothesis testing, including inference for means and proportions. Emphasis on case studies and real data sets, as well as reproducible and transparent workflows when writing computer scripts for analysis and reports.",
+    "prerequisite": "DSCI 100.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Statistical Methods",
+    "course_code": "STAT_V",
+    "course_id": 203,
+    "credits": "3",
+    "description": "Organizing, displaying and summarizing data. Inference estimation and testing for elementary probability models. Not for credit towards a B.Sc. (Consult the Credit Exclusion list within the Faculty of Science section in the Calendar.)",
+    "prerequisite": "MATH 11. Or Pre-calculus 11.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introductory Probability and Statistics",
+    "course_code": "STAT_V",
+    "course_id": 251,
+    "credits": "3",
+    "description": "Probability, discrete and continuous random variables, joint probability distributions, estimation, hypothesis testing, regression, analysis of variance. (Consult the Credit Exclusion list within the Faculty of Science section of the Calendar).",
+    "prerequisite": "One of APSC_V 173, MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 121, SCIE_V 001, MATH_O 101, MATH_O 103.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Intermediate Statistics for Applications",
+    "course_code": "STAT_V",
+    "course_id": 300,
+    "credits": "3",
+    "description": "Further topics in statistical inference, including parametric and non-parametric methods, goodness-of-fit methods, analysis of variance and covariance, regression analysis, categorical data analysis, experimental designs, time series, model fitting, and statistical computing.",
+    "prerequisite": "One of STAT_V 200, STAT_V 203, STAT_V 241, STAT_V 251, BIOL_V 300, BUSI_V 291, COMM_V 191, COMM_V 291, ECON_V 325, ECON_V 327, FRST_V 231, KIN_V 206, LFS_V 252, POLI_V 380, PSYC_V 218, PSYC_V 278, HES_O 340, POLI_O 400, STAT_O 121, STAT_O 121, STAT_O 205, STAT_O 230. Equivalency: COMM_V 411.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Statistical Modelling for Data Science",
+    "course_code": "STAT_V",
+    "course_id": 301,
+    "credits": "3",
+    "description": "Data analysis using statistical models and algorithms (e.g., linear and logistic regression, peeking, bandit, and variable selection algorithms) in case studies from different disciplines. Generative versus out-of-sample predictive models. Reproducible and transparent workflows for computer scripts and reports.",
+    "prerequisite": "STAT_V 201 and one of MATH_V 100, MATH_V 102, MATH_V 104, MATH_V 110, MATH_V 120, MATH_V 180, MATH_V 184, SCIE_V 001, MATH_O 100.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Probability",
+    "course_code": "STAT_V",
+    "course_id": 302,
+    "credits": "3",
+    "description": "Basic notions of probability, random variables, expectation and conditional expectation, limit theorems. (Consult the Credit Exclusion list within the Faculty of Science section in the Calendar.)",
+    "prerequisite": "One of MATH_V 200, MATH_V 226, MATH_V 217, MATH_V 253, MATH_V 254, MATH_O 200. Equivalency: MATH_V 302.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Probabilistic Modelling and Simulation",
+    "course_code": "STAT_V",
+    "course_id": 303,
+    "credits": "3",
+    "description": "Core concepts in probability taught through probabilistic generative modelling, simulation of random variables, basic Monte Carlo, common probability distributions and models, basic probabilistic model design and inference.",
+    "prerequisite": "All of (a) one of MATH_V 101, MATH_V 103, MATH_V 105, MATH_V 121, SCIE_V 001, (b) one of CPSC_V 103, CPSC_V 110, and (c) one of DSCI_V 100, ECON_V 325, STAT_V 200, STAT_V 251.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Statistical Inference",
+    "course_code": "STAT_V",
+    "course_id": 305,
+    "credits": "3",
+    "description": "Review of probability theory. Sampling distribution theory, large sample theory and methods of estimation and hypothesis testing, including maximum likelihood estimation, likelihood ratio testing and confidence interval construction.",
+    "prerequisite": "Either (a) one of STAT_V 200, STAT_V 203, BIOL_V 300, STAT_V 251, COMM_V 291, ECON_V 325, FRST_V 231, PSYC_V 218, PSYC_V 366, PSYO_O 271, STAT_O 121, STAT_O 124, STAT_O 205, STAT_O 230 and one of MATH_V 302, STAT_V 302, STAT_O 203; or (b) DSCI_V 200 and STAT_V 201 and one of MATH_V 302, STAT_V 302, STAT_O 203; or (c) a score of 65% or higher in one of MATH_V 302, STAT_V 302, STAT_O 203. The Department recommends that students meet the prerequisite through option (a) or (b).",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Finding Relationships in Data",
+    "course_code": "STAT_V",
+    "course_id": 306,
+    "credits": "3",
+    "description": "Modelling a response (output) variable as a function of several explanatory (input) variables: multiple regression for a continuous response, logistic regression for a binary response, and log-linear models for count data. Finding low-dimensional structure: principal components analysis. Cluster analysis. (Consult the Credit Exclusion List within the Faculty of Science section in the Calendar).",
+    "prerequisite": "One of MATH_V 152, MATH_V 221, MATH_V 223, MATH_O 222 and one of STAT_V 200, STAT_V 241, STAT_V 251, STAT_V 300, BIOL_V 300, BUSI_V 291, COMM_V 191, COMM_V 291, ECON_V 325, ECON_V 327, FRST_V 231, PSYC_V 218, PSYC_V 278, PSYO_O 271, STAT_O 124, STAT_O 205, STAT_O 230 and one of MATH_V 302, STAT_V 302, STAT_O 203.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Stochastic Signals and Systems",
+    "course_code": "STAT_V",
+    "course_id": 321,
+    "credits": "4",
+    "description": "Stochastic behaviour of signals and systems (e.g., communication systems); discrete and continuous probability; random processes; modelling and identification of linear time-invariant systems; binary hypothesis testing and decision making.",
+    "prerequisite": "One of ELEC 221, STAT 305. STAT 305 may be taken concurrently, with registration assistance from the Student Programs Coordinator in the Department of Statistics. Equivalency: ELEC321",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Statistics in Quality Assurance",
+    "course_code": "STAT_V",
+    "course_id": 335,
+    "credits": "3",
+    "description": "Philosophy of quality improvement and total quality control. Definitions of quality. Deming's principles, Ishikawa's tools, control charts, acceptance sampling, continuous improvement, quality design. Credit cannot be obtained for both STAT 335 and WOOD 335.",
+    "prerequisite": "One of STAT 200, STAT 241, STAT 251, BIOL 300.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Sample Surveys",
+    "course_code": "STAT_V",
+    "course_id": 344,
+    "credits": "3",
+    "description": "Planning and practice of sample surveys. Random sampling, bias and variance, unequal probability sampling, systematic, multistage and stratified sampling, ratio and regression estimators, post-stratification, establishing a frame, pretesting, pilot studies, nonresponse and additional topics.",
+    "prerequisite": "One of STAT 200, STAT 241, STAT 251, BIOL 300, COMM 291, ECON 325, ECON 327, FRST 231, PSYC 218, PSYC 278, PSYC 366",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Design and Analysis of Experiments",
+    "course_code": "STAT_V",
+    "course_id": 404,
+    "credits": "3",
+    "description": "Theory and application of analysis of variance for standard experimental designs, including blocked, nested, factorial and split plot designs. Fixed and random effects, multiple comparisons, analysis of covariance. (Consult the Credit Exclusion list within the Faculty of Science section in the Calendar.)",
+    "prerequisite": "STAT_V 305, one of MATH_V 152, MATH_V 221, or MATH_V 223",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Bayesian Statistics",
+    "course_code": "STAT_V",
+    "course_id": 405,
+    "credits": "3",
+    "description": "Bayesian approaches to statistical inference: probabilistic modelling, Bayesian inference workflows, approximation of posterior distributions supported by modelling languages, analysis of Bayesian procedures and posterior approximation methods.",
+    "prerequisite": "One of MATH_V 302, STAT_V 302, or MATH_V 418, and either STAT_V 305 or STAT_V 460.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Methods for Statistical Learning",
+    "course_code": "STAT_V",
+    "course_id": 406,
+    "credits": "3",
+    "description": "Flexible, data-adaptive methods for regression and classification models; regression smoothers; penalty methods; assessing accuracy of prediction; model selection; robustness; classification and regression trees; nearest-neighbour methods; neural networks; model averaging and ensembles; computational time and visualization for large data sets.",
+    "prerequisite": "a) One of STAT_V 306, CPSC_V 340, or b) STAT_V 301 and one of MATH_V 152, MATH_V 221, MATH_V 223 and one of MATH_V 302, STAT_V 302.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Advanced Linear Modelling",
+    "course_code": "STAT_V",
+    "course_id": 416,
+    "credits": "3",
+    "description": "Advanced topics in linear modelling, including weighted least squares, model selection, robust methods, splines, Bayesian methods, mixed effects models, and generalized linear models.",
+    "prerequisite": "Both STAT_V 305 and STAT_V 306.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Time Series and Forecasting",
+    "course_code": "STAT_V",
+    "course_id": 443,
+    "credits": "3",
+    "description": "Trend and seasonality, autocorrelation, stationarity, stochastic models, exponential smoothing, Holt-Winters methods, Box-Jenkins approach, frequency domain analysis.",
+    "prerequisite": "Both (a) one of MATH_V 302, MATH_V 318, STAT_V 302 and (b) one of ECON_V 326, ECON_V 328, STAT_V 300, STAT_V 301, STAT_V 306",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Exploratory Data Analysis",
+    "course_code": "STAT_V",
+    "course_id": 445,
+    "credits": "3",
+    "description": "Methods for exploring and presenting the structure of data: one group of numbers, several groups, bivariate data, time series data and two-way tables. Data displays, outlier identification, transformations, resistant regression, several types of data smoothing, comparisons with standard statistical methods.",
+    "prerequisite": "[STAT306]",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Special Topics in Statistics",
+    "course_code": "STAT_V",
+    "course_id": 447,
+    "credits": "2-6",
+    "description": "Students should consult the Statistics Department for the particular topics offered in a given year.",
+    "prerequisite": "STAT_V 305.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Statistics Honours Project",
+    "course_code": "STAT_V",
+    "course_id": 449,
+    "credits": "3-6",
+    "description": "A research project, undertaken under the supervision of a faculty member, resulting in a written report.",
+    "prerequisite": "Open to students enrolled in a Statistics Honours specialization and at class standing 4. Permission of the Undergraduate Advisor and supervising faculty member is required.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Case Studies in Statistics",
+    "course_code": "STAT_V",
+    "course_id": 450,
+    "credits": "3",
+    "description": "Readings and projects in areas of current statistical application including environmental science, industrial statistics, official statistics, actuarial statistics, and medical statistics.",
+    "prerequisite": "[STAT306]",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Statistical Inference I",
+    "course_code": "STAT_V",
+    "course_id": 460,
+    "credits": "3",
+    "description": "Statistical models and their properties, estimation methods, properties of point and interval estimation, likelihood, Bayesian inference. Intended for Honours students.",
+    "prerequisite": "All of MATH 320, STAT 305 and one of MATH 152, MATH 221, MATH 223.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Statistical Inference II",
+    "course_code": "STAT_V",
+    "course_id": 461,
+    "credits": "3",
+    "description": "Hypothesis testing and model selection in modern statistics, confidence regions, multiple testing, model comparison criteria. Intended for Honours students.",
+    "prerequisite": "[STAT460]",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Introduction to Data Science",
+    "course_code": "DSCI_V",
+    "course_id": 100,
+    "credits": "3",
+    "description": "Use of data science tools to summarize, visualize, and analyze data. Sensible workflows and clear interpretations are emphasized. .",
+    "prerequisite": "",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Navigating Data: Acquisition, Exploration and Management",
+    "course_code": "DSCI_V",
+    "course_id": 200,
+    "credits": "3",
+    "description": "Acquiring data through web scraping and generating synthetic data via simulations. Sampling and experimental designs. Reporting and visualizing data and data quality. Data privacy and ownership. Emphasis on case studies and real data sets.",
+    "prerequisite": "DSCI_V 100 or DATA_O 101.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Discrete Mathematics for Data Science",
+    "course_code": "DSCI_V",
+    "course_id": 220,
+    "credits": "4",
+    "description": "Boolean algebra and logical inference, proof techniques, sets, relations and functions, regular expressions, and data filtering.",
+    "prerequisite": "All of a) DSCI_V 100 or DATA_O 101; b) MATH_V 100, MATH_V 110, MATH_V 120, MATH_V 180, SCIE_V 001 or MATH_O 100; and c) CPSC_V 103 or CPSC_V 110.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Data Structures for Data Science",
+    "course_code": "DSCI_V",
+    "course_id": 221,
+    "credits": "4",
+    "description": "Object-oriented programming. Design and analysis of basic algorithms and data structures especially relevant to data science. Algorithm analysis methods, basic data structures, graphs and graph algorithms.",
+    "prerequisite": "(a) DSCI_V 220, or (b) CPSC_V 121 and one of CPSC_V 203, CPSC_V 210, CPEN_V 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Reproducible and Trustworthy Workflows for Data Science",
+    "course_code": "DSCI_V",
+    "course_id": 310,
+    "credits": "3",
+    "description": "Data science methods to automate the running and testing of code and analytic reports, manage data analysis software dependencies, package and deploy software for data analysis, and collaborate with others using version control.",
+    "prerequisite": "One of (a) DSCI_V 221, (b) DSCI_V 100 and one of CPSC_V 203, CPSC_V 210, CPEN_V 221, or (c) DSCI_V 100, either MATH_V 210 or ECON_V 323, and either CPSC_V 107 or CPSC_V 110.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Visualization for Data Science",
+    "course_code": "DSCI_V",
+    "course_id": 320,
+    "credits": "3",
+    "description": "Analysis, design, and implementation of static and interactive visual representations; visualization literacy; data communication; exploratory Data Analysis; application of theoretical principles to visualization development.",
+    "prerequisite": "STAT_V 201 and one of CPSC_V 203, CPSC_V 210, CPEN_V 221, DSCI_V 221.",
+    "corequisite": "",
+    "sections": []
+  },
+  {
+    "title": "Fairness, Accountability, Transparency and Ethics (FATE) in Data Science",
+    "course_code": "DSCI_V",
+    "course_id": 430,
+    "credits": "3",
+    "description": "Ethical application of data science and machine learning algorithms. Application of ethical theories in real-world case studies. Data ownership, collection, and validity. Algorithm auditing, fairness and transparency. Reducing unfairness in algorithms. Deployment of predictive models and dissemination of results.",
+    "prerequisite": "One of CPSC 330, CPSC 340, STAT 301, STAT 406.",
+    "corequisite": "",
+    "sections": []
+  }
+]
