@@ -4,6 +4,10 @@
 
 This project was developed for [OpenAI's WebMCP Challenge](https://webmcp.devpost.com/).
 
+## Demo video
+
+[![Watch the Termwise demo on YouTube](https://img.youtube.com/vi/IAl7dKv-Zw4/maxresdefault.jpg)](https://youtu.be/IAl7dKv-Zw4)
+
 ## Running it
 
 Because the pages load each other's JS/CSS as separate files, some browsers restrict
